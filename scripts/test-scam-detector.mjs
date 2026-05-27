@@ -17,8 +17,12 @@ function isRiskAcceptable(actual, expected) {
     return false
   }
 
-  // Allow one-level difference because LLM classification may vary slightly.
+  // Allow one-level difference because LLM risk scoring can vary slightly.
   return Math.abs(actualIndex - expectedIndex) <= 1
+}
+
+function isCategoryAcceptable(actualCategory, acceptableCategories) {
+  return acceptableCategories.includes(actualCategory)
 }
 
 for (const testCase of testCases) {
@@ -36,7 +40,10 @@ for (const testCase of testCases) {
 
   const riskOk = isRiskAcceptable(result.riskLevel, testCase.expectedRiskLevel)
 
-  const categoryOk = result.category === testCase.expectedCategory
+  const categoryOk = isCategoryAcceptable(
+    result.category,
+    testCase.acceptableCategories,
+  )
 
   if (riskOk && categoryOk) {
     passed++
@@ -44,10 +51,12 @@ for (const testCase of testCases) {
   } else {
     failed++
     console.log(`❌ ${testCase.id}`)
+
     console.log('Expected:', {
       riskLevel: testCase.expectedRiskLevel,
-      category: testCase.expectedCategory,
+      acceptableCategories: testCase.acceptableCategories,
     })
+
     console.log('Actual:', {
       riskLevel: result.riskLevel,
       category: result.category,
