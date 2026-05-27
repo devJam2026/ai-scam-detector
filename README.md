@@ -187,16 +187,24 @@ sequenceDiagram
 
 ```mermaid
 flowchart LR
-    A[app/page.tsx] --> B[ExampleMessages]
-    A --> C[ScamResultCard]
-    A --> D[ScanHistory]
+    Page["app/page.tsx"]
+    Examples["components/ExampleMessages.tsx"]
+    Result["components/ScamResultCard.tsx"]
+    History["components/ScanHistory.tsx"]
+    Badge["components/RiskBadge.tsx"]
+    Meter["components/RiskMeter.tsx"]
+    API["app/api/analyze-scam/route.ts"]
+    Prompt["lib/scamPrompt.ts"]
+    Schema["lib/scamSchema.ts"]
 
-    C --> E[RiskBadge]
-    C --> F[RiskMeter]
-
-    A --> G[/api/analyze-scam]
-    G --> H[scamPrompt.ts]
-    G --> I[scamSchema.ts]
+    Page --> Examples
+    Page --> Result
+    Page --> History
+    Result --> Badge
+    Result --> Meter
+    Page --> API
+    API --> Prompt
+    API --> Schema
 ```
 
 ---
@@ -847,22 +855,3 @@ This tool is for educational and awareness purposes.
 It should not be treated as legal, financial, or professional cybersecurity advice. Users should verify suspicious messages through official channels before taking action.
 
 ---
-
-## 31. Project Status
-
-Current version:
-
-```text
-MVP complete
-Structured output complete
-Validation complete
-Frontend complete
-Evaluation test script complete
-Portfolio README complete
-```
-
-Next recommended step:
-
-```text
-Deploy to Vercel and add screenshots to this README.
-```
