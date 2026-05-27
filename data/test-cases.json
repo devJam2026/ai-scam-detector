@@ -1,0 +1,44 @@
+[
+  {
+    "id": "bank-phishing-1",
+    "message": "Your SBI account will be blocked today. Click here to update your KYC immediately: http://sbi-verify-login.fake",
+    "expectedRiskLevel": "HIGH",
+    "expectedCategory": "PHISHING"
+  },
+  {
+    "id": "safe-meeting-1",
+    "message": "Hi Avick, are we still meeting at 4 PM today?",
+    "expectedRiskLevel": "LOW",
+    "expectedCategory": "SAFE"
+  },
+  {
+    "id": "fake-prize-1",
+    "message": "Congratulations! You won ₹10,00,000. Pay ₹999 processing fee to claim your reward.",
+    "expectedRiskLevel": "CRITICAL",
+    "expectedCategory": "SCAM"
+  },
+  {
+    "id": "delivery-phishing-1",
+    "message": "Your parcel is waiting. Click this link to reschedule delivery and pay ₹20 fee.",
+    "expectedRiskLevel": "HIGH",
+    "expectedCategory": "PHISHING"
+  },
+  {
+    "id": "manager-gift-card-1",
+    "message": "I am your manager. I am in a meeting. Buy Amazon gift cards immediately and send me the codes.",
+    "expectedRiskLevel": "CRITICAL",
+    "expectedCategory": "SOCIAL_ENGINEERING"
+  },
+  {
+    "id": "safe-family-1",
+    "message": "Can you pick up milk while coming home?",
+    "expectedRiskLevel": "LOW",
+    "expectedCategory": "SAFE"
+  },
+  {
+    "id": "otp-request-1",
+    "message": "I am calling from bank support. Share the OTP you just received to stop your card from being blocked.",
+    "expectedRiskLevel": "CRITICAL",
+    "expectedCategory": "PHISHING"
+  }
+]
