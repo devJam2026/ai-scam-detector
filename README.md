@@ -4,7 +4,8 @@ A production-style GenAI application that analyzes SMS, email, and chat messages
 
 The system uses an LLM with **structured output**, **Zod schema validation**, **risk scoring**, **fraud pattern detection**, and a clean **Next.js UI** to help users understand whether a message is safe or suspicious.
 
----
+<img width="579" height="460" alt="image" src="https://github.com/user-attachments/assets/d9fed6b7-adc5-476c-b5e8-89eb8f6772d4" />
+
 
 ## 1. Project Summary
 
