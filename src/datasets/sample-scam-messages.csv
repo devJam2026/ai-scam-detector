@@ -1,21 +1,1001 @@
-id,message,risk_level,category,date
-1,Congratulations! You've won a free iPhone! Click here to claim your prize now,HIGH,Prize Scam,2024-01-15
-2,Your account has been locked. Verify your identity immediately by clicking this link,HIGH,Phishing,2024-01-16
-3,Dear Customer, Update your payment method to continue your subscription,MEDIUM,Social Engineering,2024-01-17
-4,You are eligible for a tax refund of $500. Apply now at this link,HIGH,Tax Scam,2024-01-18
-5,URGENT: Suspicious activity detected. Confirm your password immediately,HIGH,Credential Theft,2024-01-19
-6,Claim your free Bitcoin bonus! Limited time offer,HIGH,Crypto Scam,2024-01-20
-7,You've been selected for an exclusive job opportunity with flexible hours,MEDIUM,Recruitment Scam,2024-01-21
-8,Your package delivery failed. Pay $2.99 to reschedule,HIGH,Delivery Scam,2024-01-22
-9,Hi, I noticed unusual activity on your account. Please reply with your PIN,HIGH,Social Engineering,2024-01-23
-10,Congratulations! You qualify for a mortgage with 0% interest rate,MEDIUM,Financial Scam,2024-01-24
-11,You are a lucky winner of our monthly lottery! Claim your $50,000 prize,HIGH,Lottery Scam,2024-01-25
-12,Please verify your Apple ID to maintain security,HIGH,Phishing,2024-01-26
-13,Your credit card has been blocked for security reasons. Update your information,HIGH,Phishing,2024-01-27
-14,Join our investment program and earn 200% returns monthly,HIGH,Ponzi Scheme,2024-01-28
-15,You have been selected for an Amazon gift card reward program,HIGH,Prize Scam,2024-01-29
-16,Verify your Social Security Number for tax purposes,HIGH,Identity Theft,2024-01-30
-17,You have unclaimed money in your bank account. Contact us to claim,MEDIUM,Financial Scam,2024-01-31
-18,Click here to download the latest security update for your device,MEDIUM,Malware Distribution,2024-02-01
-19,Confirm your banking details to prevent account suspension,HIGH,Phishing,2024-02-02
-20,You are eligible for debt relief. Call now for a free consultation,MEDIUM,Predatory Lending,2024-02-03
+id,message,label,scam_type,source_channel,language,contains_url,contains_amount,expected_risk,notes
+MSG-0001,Your bank account will be blocked today. Click http://reward-claim-now.fake immediately to update your KYC.,scam,kyc_phishing,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0002,Your salary of ₹5000 has been credited to your bank account ending 1920.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0003,Your parcel is held at customs. Pay ₹99 clearance charge here: http://upi-block-alert.fake,scam,delivery_scam,whatsapp,en,yes,yes,high,synthetic_training_example
+MSG-0004,Your Amazon order #927524 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0005,Your refund of ₹999 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0006,Invest ₹5000 and receive fixed daily profit. No risk. Contact now.,scam,investment_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0007,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0008,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0009,School fee receipt for ₹25000 has been generated successfully.,safe,none,email,en,no,yes,low,safe_school
+MSG-0010,Your salary of ₹999 has been credited to your bank account ending 2617.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0011,"I am stuck at airport. Send ₹999 now, cannot call.",scam,social_engineering,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0012,Your shipment is suspended. Confirm PAN and address here http://parcel-clearance-pay.invalid,scam,delivery_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0013,The project sync has moved to 4 PM. Please join the usual meeting link.,safe,none,email,en,no,no,low,safe_meeting
+MSG-0014,Transfer ₹99 processing fee first. Your grant payment will be credited after verification.,scam,advance_fee_fraud,email,en,no,yes,high,synthetic_training_example
+MSG-0015,Your appointment with Dr. Sen is confirmed for 28 May at 2 PM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0016,"Suman, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0017,Your OTP for login is 788108. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0018,Electricity connection will be disconnected tonight. Pay bill immediately at http://sbi-verify-login.fake,scam,electricity_bill_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0019,Send small refundable fee ₹2499 to confirm your beneficiary account.,scam,advance_fee_fraud,email,en,no,yes,high,synthetic_training_example
+MSG-0020,Your card payment of ₹1499 at Reliance Digital was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0021,Electricity department notice: pay reconnection charge ₹499 now.,scam,electricity_bill_scam,email,en,no,yes,medium,synthetic_training_example
+MSG-0022,Invest ₹50000 and receive fixed daily profit. No risk. Contact now.,scam,investment_scam,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0023,This is RBI support. Your account is under review. Verify details at http://bank-kyc-update.invalid,scam,impersonation,email,en,yes,no,high,synthetic_training_example
+MSG-0024,Your Flipkart order #296494 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0025,Your claim is approved. Pay service tax ₹799 to receive ₹5000.,scam,advance_fee_fraud,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0026,"Your loan is ready. Click http://parcel-clearance-pay.invalid and upload Aadhaar, PAN, bank details immediately.",scam,loan_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0027,Your salary of ₹50000 has been credited to your bank account ending 4217.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0028,Share your OTP 229988 immediately to stop account suspension.,scam,otp_theft,email,en,no,no,high,synthetic_training_example
+MSG-0029,Your refund of ₹1499 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0030,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0031,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0032,"Suman, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0033,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0034,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0035,Your cab booking is confirmed. Driver details will be shared before pickup.,safe,none,sms,en,no,no,low,safe_travel
+MSG-0036,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0037,Electricity connection will be disconnected tonight. Pay bill immediately at http://bank-kyc-update.invalid,scam,electricity_bill_scam,whatsapp,en,yes,no,medium,synthetic_training_example
+MSG-0038,Crypto trading group gives assured profit. Join using http://reward-claim-now.fake and deposit now.,scam,investment_scam,email,en,yes,no,medium,synthetic_training_example
+MSG-0039,KSEB payment failed. Share UPI PIN to restore connection.,scam,electricity_bill_scam,whatsapp,en,no,no,medium,synthetic_training_example
+MSG-0040,Electricity department notice: pay reconnection charge ₹299 now.,scam,electricity_bill_scam,sms,en,no,yes,medium,synthetic_training_example
+MSG-0041,Your OTP for login is 498290. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0042,Registration fee pending. Pay ₹199 today to unlock your reward.,scam,advance_fee_fraud,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0043,Your shipment is suspended. Confirm PAN and address here http://sbi-verify-login.fake,scam,delivery_scam,sms,en,yes,no,high,synthetic_training_example
+MSG-0044,Virus detected in your phone. Download cleaner app from http://reward-claim-now.fake,scam,tech_support_scam,sms,en,yes,no,high,synthetic_training_example
+MSG-0045,Your card payment of ₹1499 at DMart was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0046,HR team approved your profile. Transfer ₹199 for document verification.,scam,job_scam,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0047,"Hi Priya, are we still meeting at 4 PM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0048,Final notice: your prize will expire today. Click http://login-security-check.test to receive money.,scam,fake_reward,sms,en,yes,no,high,synthetic_training_example
+MSG-0049,"I am stuck at airport. Send ₹50000 now, cannot call.",scam,social_engineering,sms,en,no,yes,high,synthetic_training_example
+MSG-0050,The project sync has moved to 2 PM. Please join the usual meeting link.,safe,none,email,en,no,no,low,safe_meeting
+MSG-0051,KSEB payment failed. Share UPI PIN to restore connection.,scam,electricity_bill_scam,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0052,We are from customer care. Tell us your OTP to confirm account ownership.,scam,otp_theft,sms,en,no,no,high,synthetic_training_example
+MSG-0053,"Dear customer, update KYC details urgently using http://login-security-check.test. Failure may block UPI services.",scam,kyc_phishing,email,en,yes,no,high,synthetic_training_example
+MSG-0054,Part-time task job available. Deposit ₹499 to activate your employee ID.,scam,job_scam,sms,en,no,yes,medium,synthetic_training_example
+MSG-0055,Your refund of ₹10000 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0056,Work from home job. Earn ₹5000 daily. Pay ₹299 registration fee to start.,scam,job_scam,email,en,no,yes,high,synthetic_training_example
+MSG-0057,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0058,Your return pickup is scheduled for tomorrow between 2 PM and 10 AM.,safe,none,sms,en,no,no,low,safe_ecommerce
+MSG-0059,Courier authority requires PAN update immediately at http://parcel-clearance-pay.invalid.,scam,impersonation,email,en,yes,no,high,synthetic_training_example
+MSG-0060,Your device is infected. Call support immediately and install remote access app.,scam,tech_support_scam,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0061,Your appointment with Dr. Sen is confirmed for Monday at 6:30 PM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0062,Your package from Flipkart is out for delivery today. Track it in the official app.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0063,Your appointment with Dr. Das is confirmed for 28 May at 10 AM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0064,Your refund is ready. Provide OTP and PIN to release ₹50000.,scam,otp_theft,sms,en,no,yes,high,synthetic_training_example
+MSG-0065,We are from customer care. Tell us your OTP to confirm account ownership.,scam,otp_theft,sms,en,no,no,high,synthetic_training_example
+MSG-0066,Invest ₹2500 and receive fixed daily profit. No risk. Contact now.,scam,investment_scam,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0067,Your electricity bill of ₹999 is due on 28 May. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0068,Final warning: electricity supply suspended in 2 hours. Update payment here http://login-security-check.test,scam,electricity_bill_scam,whatsapp,en,yes,no,medium,synthetic_training_example
+MSG-0069,Send your password and OTP for urgent security verification.,scam,otp_theft,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0070,Your refund is ready. Provide OTP and PIN to release ₹25000.,scam,otp_theft,email,en,no,yes,high,synthetic_training_example
+MSG-0071,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0072,Transfer ₹799 processing fee first. Your grant payment will be credited after verification.,scam,advance_fee_fraud,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0073,Your return pickup is scheduled for tomorrow between 10 AM and 4 PM.,safe,none,sms,en,no,no,low,safe_ecommerce
+MSG-0074,Your return pickup is scheduled for tomorrow between 6:30 PM and 2 PM.,safe,none,sms,en,no,no,low,safe_ecommerce
+MSG-0075,Loan disbursal pending due to verification. Transfer ₹2499 now.,scam,loan_scam,email,en,no,yes,high,synthetic_training_example
+MSG-0076,"Hi Priya, are we still meeting at 10 AM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0077,Government subsidy approved. Upload Aadhaar and pay ₹199 verification fee.,scam,impersonation,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0078,Your ICICI order #402099 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0079,Invest ₹1000000 and receive fixed daily profit. No risk. Contact now.,scam,investment_scam,sms,en,no,yes,medium,synthetic_training_example
+MSG-0080,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0081,Your refund of ₹500000 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0082,Virus detected in your phone. Download cleaner app from http://parcel-clearance-pay.invalid,scam,tech_support_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0083,Your card payment of ₹500000 at BigBasket was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0084,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0085,Your monthly subscription renewal for Spotify is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0086,Your monthly subscription renewal for Microsoft 365 is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0087,Limited stock tip. Send ₹299 to get insider recommendation before market opens.,scam,investment_scam,email,en,no,yes,medium,synthetic_training_example
+MSG-0088,Courier package waiting. Pay redelivery fee ₹999 to avoid return: http://customer-care-help.invalid,scam,delivery_scam,whatsapp,en,yes,yes,medium,synthetic_training_example
+MSG-0089,Part-time task job available. Deposit ₹199 to activate your employee ID.,scam,job_scam,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0090,Part-time task job available. Deposit ₹299 to activate your employee ID.,scam,job_scam,email,en,no,yes,medium,synthetic_training_example
+MSG-0091,Security team needs your screen sharing code to remove malware.,scam,tech_support_scam,email,en,no,no,high,synthetic_training_example
+MSG-0092,Your friend is in hospital. Transfer ₹1000000 immediately for treatment.,scam,social_engineering,sms,en,no,yes,high,synthetic_training_example
+MSG-0093,School fee receipt for ₹50000 has been generated successfully.,safe,none,email,en,no,yes,low,safe_school
+MSG-0094,Complete bank KYC within 6 hours or your debit card will be locked: http://bank-kyc-update.invalid,scam,kyc_phishing,email,en,yes,no,high,synthetic_training_example
+MSG-0095,Your refund of ₹1000000 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0096,"Hi Amit, are we still meeting at 4 PM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0097,"Rahul, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0098,Congratulations! You won ₹2500 in PhonePe lucky draw. Pay ₹999 processing fee to claim.,scam,fake_reward,sms,en,no,yes,medium,synthetic_training_example
+MSG-0099,Your power bill is overdue. Contact officer and pay ₹2499 to avoid disconnection.,scam,electricity_bill_scam,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0100,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0101,Your refund of ₹500000 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0102,"I lost my phone. Send money to this UPI urgently, I will return tomorrow.",scam,social_engineering,sms,en,no,no,medium,synthetic_training_example
+MSG-0103,"Congratulations, you are selected without interview. Pay onboarding kit fee ₹199.",scam,job_scam,email,en,no,yes,high,synthetic_training_example
+MSG-0104,Send small refundable fee ₹999 to confirm your beneficiary account.,scam,advance_fee_fraud,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0105,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0106,The project sync has moved to 11:30 AM. Please join the usual meeting link.,safe,none,email,en,no,no,low,safe_meeting
+MSG-0107,Income Tax refund blocked. Submit bank details here http://parcel-clearance-pay.invalid to release money.,scam,impersonation,sms,en,yes,no,high,synthetic_training_example
+MSG-0108,Your card payment of ₹1499 at Apollo Pharmacy was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0109,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0110,Your monthly subscription renewal for Spotify is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0111,KSEB payment failed. Share UPI PIN to restore connection.,scam,electricity_bill_scam,whatsapp,en,no,no,medium,synthetic_training_example
+MSG-0112,Your salary of ₹50000 has been credited to your bank account ending 5351.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0113,We are from customer care. Tell us your OTP to confirm account ownership.,scam,otp_theft,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0114,Your shipment is suspended. Confirm PAN and address here http://customer-care-help.invalid,scam,delivery_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0115,Your monthly subscription renewal for Spotify is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0116,Online typing job guaranteed income. Submit Aadhaar and pay registration fee here: http://login-security-check.test,scam,job_scam,sms,en,yes,no,medium,synthetic_training_example
+MSG-0117,Your return pickup is scheduled for tomorrow between 6:30 PM and 4 PM.,safe,none,sms,en,no,no,low,safe_ecommerce
+MSG-0118,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0119,Share your OTP 914617 immediately to stop account suspension.,scam,otp_theft,email,en,no,no,high,synthetic_training_example
+MSG-0120,Please keep this confidential and pay vendor today using this account.,scam,social_engineering,sms,en,no,no,medium,synthetic_training_example
+MSG-0121,I am your manager. Buy gift cards worth ₹5000 urgently and send codes.,scam,social_engineering,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0122,We are from customer care. Tell us your OTP to confirm account ownership.,scam,otp_theft,sms,en,no,no,high,synthetic_training_example
+MSG-0123,Your appointment with Dr. Das is confirmed for 15 June at 11:30 AM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0124,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0125,Delivery failed due to incomplete address. Update details urgently: http://sbi-verify-login.fake,scam,delivery_scam,email,en,yes,no,medium,synthetic_training_example
+MSG-0126,Microsoft security alert: your computer is hacked. Click http://upi-block-alert.fake to fix now.,scam,tech_support_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0127,Your electricity bill of ₹100000 is due on 28 May. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0128,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0129,Package from overseas blocked by customs. Immediate payment required: http://secure-account-check.test,scam,delivery_scam,email,en,yes,no,medium,synthetic_training_example
+MSG-0130,Your mobile number won a lottery prize of ₹999. Transfer ₹499 registration fee now.,scam,fake_reward,email,en,no,yes,high,synthetic_training_example
+MSG-0131,Your salary of ₹500000 has been credited to your bank account ending 6437.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0132,Claim your cashback reward before midnight: http://secure-account-check.test,scam,fake_reward,sms,en,yes,no,medium,synthetic_training_example
+MSG-0133,Pay ₹2499 verification charge to release your approved loan amount of ₹50000.,scam,advance_fee_fraud,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0134,Your card payment of ₹100000 at DMart was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0135,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0136,Your shipment is suspended. Confirm PAN and address here http://customer-care-help.invalid,scam,delivery_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0137,Online typing job guaranteed income. Submit Aadhaar and pay registration fee here: http://customer-care-help.invalid,scam,job_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0138,Limited stock tip. Send ₹999 to get insider recommendation before market opens.,scam,investment_scam,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0139,"Rahul, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0140,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0141,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0142,Your refund of ₹1000000 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0143,School fee receipt for ₹500000 has been generated successfully.,safe,none,email,en,no,yes,low,safe_school
+MSG-0144,Your shipment is suspended. Confirm PAN and address here http://bank-kyc-update.invalid,scam,delivery_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0145,Courier authority requires PAN update immediately at http://customer-care-help.invalid.,scam,impersonation,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0146,Microsoft security alert: your computer is hacked. Click http://sbi-verify-login.fake to fix now.,scam,tech_support_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0147,School fee receipt for ₹500000 has been generated successfully.,safe,none,email,en,no,yes,low,safe_school
+MSG-0148,Government subsidy approved. Upload Aadhaar and pay ₹999 verification fee.,scam,impersonation,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0149,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0150,Your refund of ₹1499 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0151,Loan disbursal pending due to verification. Transfer ₹499 now.,scam,loan_scam,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0152,The project sync has moved to 6:30 PM. Please join the usual meeting link.,safe,none,email,en,no,no,low,safe_meeting
+MSG-0153,Your appointment with Dr. Sharma is confirmed for 28 May at 6:30 PM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0154,Your email account will be disabled. Verify password at http://secure-account-check.test,scam,tech_support_scam,sms,en,yes,no,high,synthetic_training_example
+MSG-0155,Your Axis order #299834 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0156,"Ravi, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0157,Your return pickup is scheduled for tomorrow between 11:30 AM and 10 AM.,safe,none,sms,en,no,no,low,safe_ecommerce
+MSG-0158,Your card payment of ₹100000 at DMart was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0159,Final notice: your prize will expire today. Click http://parcel-clearance-pay.invalid to receive money.,scam,fake_reward,email,en,yes,no,high,synthetic_training_example
+MSG-0160,Low interest personal loan approved. Processing fee required before disbursal.,scam,loan_scam,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0161,Your card payment of ₹50000 at Swiggy was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0162,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0163,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0164,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0165,Your device is infected. Call support immediately and install remote access app.,scam,tech_support_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0166,Work from home job. Earn ₹50000 daily. Pay ₹299 registration fee to start.,scam,job_scam,email,en,no,yes,high,synthetic_training_example
+MSG-0167,Your mobile number won a lottery prize of ₹999. Transfer ₹299 registration fee now.,scam,fake_reward,sms,en,no,yes,high,synthetic_training_example
+MSG-0168,The project sync has moved to 6:30 PM. Please join the usual meeting link.,safe,none,email,en,no,no,low,safe_meeting
+MSG-0169,Final warning: electricity supply suspended in 2 hours. Update payment here http://customer-care-help.invalid,scam,electricity_bill_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0170,School fee receipt for ₹5000 has been generated successfully.,safe,none,email,en,no,yes,low,safe_school
+MSG-0171,Final notice: your prize will expire today. Click http://sbi-verify-login.fake to receive money.,scam,fake_reward,sms,en,yes,no,medium,synthetic_training_example
+MSG-0172,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0173,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0174,Security team needs your screen sharing code to remove malware.,scam,tech_support_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0175,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0176,Your shipment is suspended. Confirm PAN and address here http://secure-account-check.test,scam,delivery_scam,whatsapp,en,yes,no,medium,synthetic_training_example
+MSG-0177,Loan disbursal pending due to verification. Transfer ₹299 now.,scam,loan_scam,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0178,Your appointment with Dr. Das is confirmed for 15 June at 11:30 AM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0179,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0180,Your package from Myntra is out for delivery today. Track it in the official app.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0181,Pay ₹1499 verification charge to release your approved loan amount of ₹999.,scam,advance_fee_fraud,sms,en,no,yes,high,synthetic_training_example
+MSG-0182,HR team approved your profile. Transfer ₹2499 for document verification.,scam,job_scam,email,en,no,yes,medium,synthetic_training_example
+MSG-0183,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0184,Virus detected in your phone. Download cleaner app from http://bank-kyc-update.invalid,scam,tech_support_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0185,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0186,Your card payment of ₹100000 at BigBasket was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0187,Crypto trading group gives assured profit. Join using http://gov-refund-portal.test and deposit now.,scam,investment_scam,whatsapp,en,yes,no,medium,synthetic_training_example
+MSG-0188,Crypto trading group gives assured profit. Join using http://reward-claim-now.fake and deposit now.,scam,investment_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0189,Your refund of ₹2500 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0190,Your OTP for login is 904150. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0191,Your salary of ₹5000 has been credited to your bank account ending 3697.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0192,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0193,Your monthly subscription renewal for Google One is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0194,Your monthly subscription renewal for Google One is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0195,Your electricity bill of ₹2500 is due on Friday. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0196,Claim your cashback reward before midnight: http://parcel-clearance-pay.invalid,scam,fake_reward,sms,en,yes,no,medium,synthetic_training_example
+MSG-0197,"Dear customer, update KYC details urgently using http://bank-kyc-update.invalid. Failure may block UPI services.",scam,kyc_phishing,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0198,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0199,Your electricity bill of ₹50000 is due on Monday. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0200,"Avick, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0201,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0202,"Hi Ravi, are we still meeting at 6:30 PM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0203,Bank verification pending. Send OTP to this number to activate your card.,scam,otp_theft,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0204,Your cab booking is confirmed. Driver details will be shared before pickup.,safe,none,sms,en,no,no,low,safe_travel
+MSG-0205,Your parcel is held at customs. Pay ₹999 clearance charge here: http://customer-care-help.invalid,scam,delivery_scam,whatsapp,en,yes,yes,medium,synthetic_training_example
+MSG-0206,Your electricity bill of ₹100000 is due on Friday. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0207,Delivery failed due to incomplete address. Update details urgently: http://login-security-check.test,scam,delivery_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0208,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0209,Your package from Flipkart is out for delivery today. Track it in the official app.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0210,School fee receipt for ₹1499 has been generated successfully.,safe,none,email,en,no,yes,low,safe_school
+MSG-0211,Your mobile number won a lottery prize of ₹25000. Transfer ₹499 registration fee now.,scam,fake_reward,email,en,no,yes,medium,synthetic_training_example
+MSG-0212,Your device is infected. Call support immediately and install remote access app.,scam,tech_support_scam,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0213,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0214,Government subsidy approved. Upload Aadhaar and pay ₹299 verification fee.,scam,impersonation,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0215,Your electricity bill of ₹999 is due on Monday. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0216,Your electricity bill of ₹1000000 is due on 15 June. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0217,Your salary of ₹10000 has been credited to your bank account ending 8551.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0218,Your OTP for login is 316881. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0219,Police cyber cell notice: pay fine ₹199 today or legal action will start.,scam,impersonation,sms,en,no,yes,high,synthetic_training_example
+MSG-0220,Your return pickup is scheduled for tomorrow between 4 PM and 10 AM.,safe,none,sms,en,no,no,low,safe_ecommerce
+MSG-0221,Your bank account will be blocked today. Click http://sbi-verify-login.fake immediately to update your KYC.,scam,kyc_phishing,email,en,yes,no,high,synthetic_training_example
+MSG-0222,Your email account will be disabled. Verify password at http://bank-kyc-update.invalid,scam,tech_support_scam,sms,en,yes,no,high,synthetic_training_example
+MSG-0223,The project sync has moved to 10 AM. Please join the usual meeting link.,safe,none,email,en,no,no,low,safe_meeting
+MSG-0224,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0225,Your OTP for login is 820426. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0226,Final notice: your prize will expire today. Click http://upi-block-alert.fake to receive money.,scam,fake_reward,whatsapp,en,yes,no,medium,synthetic_training_example
+MSG-0227,Your salary of ₹500000 has been credited to your bank account ending 2684.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0228,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0229,The project sync has moved to 6:30 PM. Please join the usual meeting link.,safe,none,email,en,no,no,low,safe_meeting
+MSG-0230,Your mobile number won a lottery prize of ₹2500. Transfer ₹499 registration fee now.,scam,fake_reward,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0231,Your OTP for login is 516059. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0232,Your appointment with Dr. Sharma is confirmed for Friday at 11:30 AM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0233,Your OTP for login is 176421. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0234,Your salary of ₹1000000 has been credited to your bank account ending 3865.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0235,Invest ₹999 and receive fixed daily profit. No risk. Contact now.,scam,investment_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0236,Delivery failed due to incomplete address. Update details urgently: http://upi-block-alert.fake,scam,delivery_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0237,Your package from SBI is out for delivery today. Track it in the official app.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0238,Low interest personal loan approved. Processing fee required before disbursal.,scam,loan_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0239,Your friend is in hospital. Transfer ₹25000 immediately for treatment.,scam,social_engineering,sms,en,no,yes,high,synthetic_training_example
+MSG-0240,School fee receipt for ₹500000 has been generated successfully.,safe,none,email,en,no,yes,low,safe_school
+MSG-0241,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0242,Your monthly subscription renewal for Google One is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0243,Your email account will be disabled. Verify password at http://gov-refund-portal.test,scam,tech_support_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0244,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0245,Get urgent cash in 10 minutes. Share bank account and OTP for approval.,scam,loan_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0246,Delivery failed due to incomplete address. Update details urgently: http://sbi-verify-login.fake,scam,delivery_scam,email,en,yes,no,medium,synthetic_training_example
+MSG-0247,Loan disbursal pending due to verification. Transfer ₹999 now.,scam,loan_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0248,Your appointment with Dr. Rao is confirmed for 28 May at 11:30 AM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0249,Your Paytm order #921875 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0250,Your salary of ₹999 has been credited to your bank account ending 9834.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0251,Your Myntra order #403578 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0252,Your refund of ₹50000 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0253,Your bank account will be blocked today. Click http://gov-refund-portal.test immediately to update your KYC.,scam,kyc_phishing,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0254,Your card payment of ₹500000 at DMart was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0255,Complete bank KYC within 48 hours or your debit card will be locked: http://gov-refund-portal.test,scam,kyc_phishing,email,en,yes,no,high,synthetic_training_example
+MSG-0256,Government subsidy approved. Upload Aadhaar and pay ₹99 verification fee.,scam,impersonation,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0257,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0258,Your bank account will be blocked today. Click http://customer-care-help.invalid immediately to update your KYC.,scam,kyc_phishing,email,en,yes,no,high,synthetic_training_example
+MSG-0259,Your electricity bill of ₹2500 is due on 15 June. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0260,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0261,HR team approved your profile. Transfer ₹499 for document verification.,scam,job_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0262,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0263,Get urgent cash in 10 minutes. Share bank account and OTP for approval.,scam,loan_scam,email,en,no,no,high,synthetic_training_example
+MSG-0264,Work from home job. Earn ₹25000 daily. Pay ₹299 registration fee to start.,scam,job_scam,sms,en,no,yes,medium,synthetic_training_example
+MSG-0265,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0266,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0267,HR team approved your profile. Transfer ₹99 for document verification.,scam,job_scam,sms,en,no,yes,medium,synthetic_training_example
+MSG-0268,Your appointment with Dr. Mukherjee is confirmed for Monday at 2 PM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0269,KSEB payment failed. Share UPI PIN to restore connection.,scam,electricity_bill_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0270,Your OTP for login is 931621. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0271,Your wallet KYC is pending. Submit PAN and Aadhaar here http://customer-care-help.invalid to continue transactions.,scam,kyc_phishing,email,en,yes,no,high,synthetic_training_example
+MSG-0272,"Congratulations, you are selected without interview. Pay onboarding kit fee ₹199.",scam,job_scam,email,en,no,yes,high,synthetic_training_example
+MSG-0273,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0274,Courier package waiting. Pay redelivery fee ₹499 to avoid return: http://sbi-verify-login.fake,scam,delivery_scam,whatsapp,en,yes,yes,high,synthetic_training_example
+MSG-0275,Registration fee pending. Pay ₹799 today to unlock your reward.,scam,advance_fee_fraud,email,en,no,yes,high,synthetic_training_example
+MSG-0276,Package from overseas blocked by customs. Immediate payment required: http://upi-block-alert.fake,scam,delivery_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0277,Your cab booking is confirmed. Driver details will be shared before pickup.,safe,none,sms,en,no,no,low,safe_travel
+MSG-0278,Your Google Pay order #465962 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0279,KSEB payment failed. Share UPI PIN to restore connection.,scam,electricity_bill_scam,sms,en,no,no,medium,synthetic_training_example
+MSG-0280,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0281,Your claim is approved. Pay service tax ₹299 to receive ₹1000000.,scam,advance_fee_fraud,email,en,no,yes,high,synthetic_training_example
+MSG-0282,Your monthly subscription renewal for Google One is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0283,Government subsidy approved. Upload Aadhaar and pay ₹499 verification fee.,scam,impersonation,sms,en,no,yes,high,synthetic_training_example
+MSG-0284,Work from home job. Earn ₹1000000 daily. Pay ₹799 registration fee to start.,scam,job_scam,email,en,no,yes,medium,synthetic_training_example
+MSG-0285,"Congratulations, you are selected without interview. Pay onboarding kit fee ₹2499.",scam,job_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0286,Your card payment of ₹10000 at BigBasket was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0287,Your refund of ₹25000 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0288,Your return pickup is scheduled for tomorrow between 6:30 PM and 2 PM.,safe,none,sms,en,no,no,low,safe_ecommerce
+MSG-0289,Your appointment with Dr. Sharma is confirmed for Tuesday at 2 PM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0290,Your Myntra order #544278 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0291,Transfer ₹299 processing fee first. Your grant payment will be credited after verification.,scam,advance_fee_fraud,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0292,KYC expired for your account. Verify now at http://sbi-verify-login.fake to avoid service suspension.,scam,kyc_phishing,sms,en,yes,no,high,synthetic_training_example
+MSG-0293,Bank verification pending. Send OTP to this number to activate your card.,scam,otp_theft,email,en,no,no,high,synthetic_training_example
+MSG-0294,Package from overseas blocked by customs. Immediate payment required: http://parcel-clearance-pay.invalid,scam,delivery_scam,email,en,yes,no,medium,synthetic_training_example
+MSG-0295,Your refund is ready. Provide OTP and PIN to release ₹2500.,scam,otp_theft,sms,en,no,yes,high,synthetic_training_example
+MSG-0296,Bank verification pending. Send OTP to this number to activate your card.,scam,otp_theft,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0297,Your shipment is suspended. Confirm PAN and address here http://bank-kyc-update.invalid,scam,delivery_scam,whatsapp,en,yes,no,medium,synthetic_training_example
+MSG-0298,Your card payment of ₹500000 at Reliance Digital was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0299,"Hi Ravi, are we still meeting at 4 PM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0300,Registration fee pending. Pay ₹299 today to unlock your reward.,scam,advance_fee_fraud,sms,en,no,yes,high,synthetic_training_example
+MSG-0301,Income Tax refund blocked. Submit bank details here http://upi-block-alert.fake to release money.,scam,impersonation,email,en,yes,no,high,synthetic_training_example
+MSG-0302,Your card payment of ₹1000000 at BookMyShow was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0303,Your salary of ₹10000 has been credited to your bank account ending 9536.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0304,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0305,Your monthly subscription renewal for Spotify is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0306,"Hi Neha, are we still meeting at 2 PM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0307,Your package from Myntra is out for delivery today. Track it in the official app.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0308,"Dear customer, update KYC details urgently using http://secure-account-check.test. Failure may block UPI services.",scam,kyc_phishing,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0309,"Hi Neha, are we still meeting at 6:30 PM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0310,"Rahul, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0311,Your appointment with Dr. Das is confirmed for Monday at 11:30 AM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0312,You have been selected for a free iPhone. Claim reward here: http://sbi-verify-login.fake,scam,fake_reward,email,en,yes,no,medium,synthetic_training_example
+MSG-0313,"I lost my phone. Send money to this UPI urgently, I will return tomorrow.",scam,social_engineering,email,en,no,no,medium,synthetic_training_example
+MSG-0314,Final warning: electricity supply suspended in 2 hours. Update payment here http://upi-block-alert.fake,scam,electricity_bill_scam,whatsapp,en,yes,no,medium,synthetic_training_example
+MSG-0315,Your Tata Neu order #712955 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0316,Your card payment of ₹999 at BookMyShow was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0317,Your mobile number won a lottery prize of ₹10000. Transfer ₹2499 registration fee now.,scam,fake_reward,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0318,Police cyber cell notice: pay fine ₹199 today or legal action will start.,scam,impersonation,sms,en,no,yes,high,synthetic_training_example
+MSG-0319,Online typing job guaranteed income. Submit Aadhaar and pay registration fee here: http://reward-claim-now.fake,scam,job_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0320,KSEB payment failed. Share UPI PIN to restore connection.,scam,electricity_bill_scam,sms,en,no,no,medium,synthetic_training_example
+MSG-0321,Send your password and OTP for urgent security verification.,scam,otp_theft,sms,en,no,no,high,synthetic_training_example
+MSG-0322,Final notice: your prize will expire today. Click http://bank-kyc-update.invalid to receive money.,scam,fake_reward,email,en,yes,no,high,synthetic_training_example
+MSG-0323,KSEB payment failed. Share UPI PIN to restore connection.,scam,electricity_bill_scam,email,en,no,no,high,synthetic_training_example
+MSG-0324,Final warning: electricity supply suspended in 2 hours. Update payment here http://bank-kyc-update.invalid,scam,electricity_bill_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0325,Package from overseas blocked by customs. Immediate payment required: http://secure-account-check.test,scam,delivery_scam,sms,en,yes,no,medium,synthetic_training_example
+MSG-0326,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0327,School fee receipt for ₹1499 has been generated successfully.,safe,none,email,en,no,yes,low,safe_school
+MSG-0328,"I am stuck at airport. Send ₹25000 now, cannot call.",scam,social_engineering,email,en,no,yes,medium,synthetic_training_example
+MSG-0329,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0330,Your package from Tata Neu is out for delivery today. Track it in the official app.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0331,Congratulations! You won ₹500000 in PhonePe lucky draw. Pay ₹299 processing fee to claim.,scam,fake_reward,sms,en,no,yes,medium,synthetic_training_example
+MSG-0332,Complete bank KYC within 12 hours or your debit card will be locked: http://gov-refund-portal.test,scam,kyc_phishing,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0333,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0334,Your refund of ₹100000 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0335,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0336,Bank verification pending. Send OTP to this number to activate your card.,scam,otp_theft,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0337,Please keep this confidential and pay vendor today using this account.,scam,social_engineering,email,en,no,no,high,synthetic_training_example
+MSG-0338,Registration fee pending. Pay ₹499 today to unlock your reward.,scam,advance_fee_fraud,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0339,"Hi Priya, are we still meeting at 4 PM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0340,Government subsidy approved. Upload Aadhaar and pay ₹1499 verification fee.,scam,impersonation,sms,en,no,yes,high,synthetic_training_example
+MSG-0341,Courier authority requires PAN update immediately at http://gov-refund-portal.test.,scam,impersonation,sms,en,yes,no,high,synthetic_training_example
+MSG-0342,KYC expired for your account. Verify now at http://secure-account-check.test to avoid service suspension.,scam,kyc_phishing,sms,en,yes,no,high,synthetic_training_example
+MSG-0343,Final notice: your prize will expire today. Click http://upi-block-alert.fake to receive money.,scam,fake_reward,email,en,yes,no,high,synthetic_training_example
+MSG-0344,Congratulations! You won ₹25000 in Amazon lucky draw. Pay ₹2499 processing fee to claim.,scam,fake_reward,email,en,no,yes,medium,synthetic_training_example
+MSG-0345,Your package from Google Pay is out for delivery today. Track it in the official app.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0346,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0347,Pay ₹999 verification charge to release your approved loan amount of ₹2500.,scam,advance_fee_fraud,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0348,Your email account will be disabled. Verify password at http://reward-claim-now.fake,scam,tech_support_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0349,Your appointment with Dr. Sharma is confirmed for Monday at 2 PM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0350,Please keep this confidential and pay vendor today using this account.,scam,social_engineering,email,en,no,no,high,synthetic_training_example
+MSG-0351,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0352,Your device is infected. Call support immediately and install remote access app.,scam,tech_support_scam,email,en,no,no,high,synthetic_training_example
+MSG-0353,Electricity connection will be disconnected tonight. Pay bill immediately at http://reward-claim-now.fake,scam,electricity_bill_scam,sms,en,yes,no,medium,synthetic_training_example
+MSG-0354,Your monthly subscription renewal for Netflix is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0355,Your salary of ₹2500 has been credited to your bank account ending 4148.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0356,"Amit, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0357,Your device is infected. Call support immediately and install remote access app.,scam,tech_support_scam,email,en,no,no,high,synthetic_training_example
+MSG-0358,Your monthly subscription renewal for Spotify is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0359,Transfer ₹999 processing fee first. Your grant payment will be credited after verification.,scam,advance_fee_fraud,sms,en,no,yes,high,synthetic_training_example
+MSG-0360,Your card payment of ₹999 at Apollo Pharmacy was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0361,Send your password and OTP for urgent security verification.,scam,otp_theft,sms,en,no,no,high,synthetic_training_example
+MSG-0362,Part-time task job available. Deposit ₹2499 to activate your employee ID.,scam,job_scam,email,en,no,yes,medium,synthetic_training_example
+MSG-0363,Your Paytm order #484795 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0364,Your friend is in hospital. Transfer ₹1499 immediately for treatment.,scam,social_engineering,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0365,Complete bank KYC within 2 hours or your debit card will be locked: http://parcel-clearance-pay.invalid,scam,kyc_phishing,email,en,yes,no,high,synthetic_training_example
+MSG-0366,Courier package waiting. Pay redelivery fee ₹1499 to avoid return: http://gov-refund-portal.test,scam,delivery_scam,whatsapp,en,yes,yes,medium,synthetic_training_example
+MSG-0367,Your monthly subscription renewal for Microsoft 365 is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0368,Please keep this confidential and pay vendor today using this account.,scam,social_engineering,whatsapp,en,no,no,medium,synthetic_training_example
+MSG-0369,Crypto trading group gives assured profit. Join using http://reward-claim-now.fake and deposit now.,scam,investment_scam,sms,en,yes,no,medium,synthetic_training_example
+MSG-0370,Your card payment of ₹100000 at DMart was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0371,"Hi Ravi, are we still meeting at 6:30 PM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0372,KYC expired for your account. Verify now at http://upi-block-alert.fake to avoid service suspension.,scam,kyc_phishing,email,en,yes,no,high,synthetic_training_example
+MSG-0373,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0374,Final warning: electricity supply suspended in 2 hours. Update payment here http://gov-refund-portal.test,scam,electricity_bill_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0375,Your cab booking is confirmed. Driver details will be shared before pickup.,safe,none,sms,en,no,no,low,safe_travel
+MSG-0376,"Dear customer, update KYC details urgently using http://parcel-clearance-pay.invalid. Failure may block UPI services.",scam,kyc_phishing,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0377,Your shipment is suspended. Confirm PAN and address here http://secure-account-check.test,scam,delivery_scam,whatsapp,en,yes,no,medium,synthetic_training_example
+MSG-0378,Your package from Paytm is out for delivery today. Track it in the official app.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0379,"Hi Neha, are we still meeting at 11:30 AM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0380,Low interest personal loan approved. Processing fee required before disbursal.,scam,loan_scam,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0381,Your mobile number won a lottery prize of ₹1000000. Transfer ₹999 registration fee now.,scam,fake_reward,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0382,Registration fee pending. Pay ₹999 today to unlock your reward.,scam,advance_fee_fraud,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0383,School fee receipt for ₹1499 has been generated successfully.,safe,none,email,en,no,yes,low,safe_school
+MSG-0384,The project sync has moved to 10 AM. Please join the usual meeting link.,safe,none,email,en,no,no,low,safe_meeting
+MSG-0385,Police cyber cell notice: pay fine ₹1499 today or legal action will start.,scam,impersonation,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0386,Your claim is approved. Pay service tax ₹2499 to receive ₹10000.,scam,advance_fee_fraud,email,en,no,yes,high,synthetic_training_example
+MSG-0387,This is RBI support. Your account is under review. Verify details at http://customer-care-help.invalid,scam,impersonation,email,en,yes,no,high,synthetic_training_example
+MSG-0388,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0389,Transfer ₹1499 processing fee first. Your grant payment will be credited after verification.,scam,advance_fee_fraud,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0390,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0391,Your OTP for login is 987060. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0392,Your OTP for login is 578073. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0393,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0394,Limited stock tip. Send ₹999 to get insider recommendation before market opens.,scam,investment_scam,email,en,no,yes,medium,synthetic_training_example
+MSG-0395,Your monthly subscription renewal for Prime is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0396,Work from home job. Earn ₹1000000 daily. Pay ₹199 registration fee to start.,scam,job_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0397,Your salary of ₹5000 has been credited to your bank account ending 7065.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0398,Income Tax refund blocked. Submit bank details here http://reward-claim-now.fake to release money.,scam,impersonation,email,en,yes,no,high,synthetic_training_example
+MSG-0399,The project sync has moved to 10 AM. Please join the usual meeting link.,safe,none,email,en,no,no,low,safe_meeting
+MSG-0400,Part-time task job available. Deposit ₹799 to activate your employee ID.,scam,job_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0401,Part-time task job available. Deposit ₹799 to activate your employee ID.,scam,job_scam,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0402,Loan disbursal pending due to verification. Transfer ₹2499 now.,scam,loan_scam,email,en,no,yes,high,synthetic_training_example
+MSG-0403,Bank verification pending. Send OTP to this number to activate your card.,scam,otp_theft,email,en,no,no,high,synthetic_training_example
+MSG-0404,Your card payment of ₹25000 at Apollo Pharmacy was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0405,Your refund is ready. Provide OTP and PIN to release ₹5000.,scam,otp_theft,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0406,Your monthly subscription renewal for Google One is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0407,Transfer ₹2499 processing fee first. Your grant payment will be credited after verification.,scam,advance_fee_fraud,sms,en,no,yes,high,synthetic_training_example
+MSG-0408,The project sync has moved to 6:30 PM. Please join the usual meeting link.,safe,none,email,en,no,no,low,safe_meeting
+MSG-0409,The project sync has moved to 10 AM. Please join the usual meeting link.,safe,none,email,en,no,no,low,safe_meeting
+MSG-0410,Online typing job guaranteed income. Submit Aadhaar and pay registration fee here: http://sbi-verify-login.fake,scam,job_scam,sms,en,yes,no,high,synthetic_training_example
+MSG-0411,Your salary of ₹10000 has been credited to your bank account ending 4531.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0412,Your salary of ₹500000 has been credited to your bank account ending 6880.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0413,Your device is infected. Call support immediately and install remote access app.,scam,tech_support_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0414,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0415,Final warning: electricity supply suspended in 2 hours. Update payment here http://upi-block-alert.fake,scam,electricity_bill_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0416,"Ananya, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0417,Your monthly subscription renewal for Microsoft 365 is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0418,Your card payment of ₹5000 at DMart was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0419,"Rahul, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0420,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0421,"Dear customer, update KYC details urgently using http://upi-block-alert.fake. Failure may block UPI services.",scam,kyc_phishing,email,en,yes,no,high,synthetic_training_example
+MSG-0422,Your monthly subscription renewal for Prime is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0423,Congratulations! You won ₹500000 in Tata Neu lucky draw. Pay ₹199 processing fee to claim.,scam,fake_reward,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0424,Electricity connection will be disconnected tonight. Pay bill immediately at http://customer-care-help.invalid,scam,electricity_bill_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0425,Your refund of ₹500000 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0426,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0427,Delivery failed due to incomplete address. Update details urgently: http://login-security-check.test,scam,delivery_scam,email,en,yes,no,medium,synthetic_training_example
+MSG-0428,Courier package waiting. Pay redelivery fee ₹1499 to avoid return: http://upi-block-alert.fake,scam,delivery_scam,whatsapp,en,yes,yes,high,synthetic_training_example
+MSG-0429,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0430,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0431,You have been selected for a free iPhone. Claim reward here: http://bank-kyc-update.invalid,scam,fake_reward,whatsapp,en,yes,no,medium,synthetic_training_example
+MSG-0432,Your refund is ready. Provide OTP and PIN to release ₹1499.,scam,otp_theft,sms,en,no,yes,high,synthetic_training_example
+MSG-0433,Your OTP for login is 428709. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0434,Your salary of ₹2500 has been credited to your bank account ending 3916.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0435,Your package from Axis is out for delivery today. Track it in the official app.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0436,"Hi Priya, are we still meeting at 2 PM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0437,KYC expired for your account. Verify now at http://sbi-verify-login.fake to avoid service suspension.,scam,kyc_phishing,sms,en,yes,no,high,synthetic_training_example
+MSG-0438,Guaranteed 20% monthly return. Invest ₹1499 today and double money in 30 days.,scam,investment_scam,sms,en,no,yes,medium,synthetic_training_example
+MSG-0439,Government subsidy approved. Upload Aadhaar and pay ₹199 verification fee.,scam,impersonation,sms,en,no,yes,high,synthetic_training_example
+MSG-0440,Your card payment of ₹500000 at Reliance Digital was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0441,Your cab booking is confirmed. Driver details will be shared before pickup.,safe,none,sms,en,no,no,low,safe_travel
+MSG-0442,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0443,Bank verification pending. Send OTP to this number to activate your card.,scam,otp_theft,email,en,no,no,high,synthetic_training_example
+MSG-0444,The project sync has moved to 6:30 PM. Please join the usual meeting link.,safe,none,email,en,no,no,low,safe_meeting
+MSG-0445,"Suman, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0446,Claim your cashback reward before midnight: http://sbi-verify-login.fake,scam,fake_reward,sms,en,yes,no,medium,synthetic_training_example
+MSG-0447,"Your loan is ready. Click http://upi-block-alert.fake and upload Aadhaar, PAN, bank details immediately.",scam,loan_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0448,Your Paytm order #825990 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0449,Electricity department notice: pay reconnection charge ₹799 now.,scam,electricity_bill_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0450,We are from customer care. Tell us your OTP to confirm account ownership.,scam,otp_theft,email,en,no,no,high,synthetic_training_example
+MSG-0451,Get urgent cash in 10 minutes. Share bank account and OTP for approval.,scam,loan_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0452,Loan disbursal pending due to verification. Transfer ₹999 now.,scam,loan_scam,email,en,no,yes,high,synthetic_training_example
+MSG-0453,Your mobile number won a lottery prize of ₹1499. Transfer ₹199 registration fee now.,scam,fake_reward,email,en,no,yes,medium,synthetic_training_example
+MSG-0454,You have been selected for a free iPhone. Claim reward here: http://bank-kyc-update.invalid,scam,fake_reward,whatsapp,en,yes,no,medium,synthetic_training_example
+MSG-0455,Guaranteed 20% monthly return. Invest ₹199 today and double money in 30 days.,scam,investment_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0456,"Rahul, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0457,Your OTP for login is 941204. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0458,This is RBI support. Your account is under review. Verify details at http://sbi-verify-login.fake,scam,impersonation,email,en,yes,no,high,synthetic_training_example
+MSG-0459,Work from home job. Earn ₹10000 daily. Pay ₹2499 registration fee to start.,scam,job_scam,sms,en,no,yes,medium,synthetic_training_example
+MSG-0460,Your device is infected. Call support immediately and install remote access app.,scam,tech_support_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0461,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0462,Your return pickup is scheduled for tomorrow between 10 AM and 2 PM.,safe,none,sms,en,no,no,low,safe_ecommerce
+MSG-0463,Loan disbursal pending due to verification. Transfer ₹99 now.,scam,loan_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0464,Your return pickup is scheduled for tomorrow between 6:30 PM and 2 PM.,safe,none,sms,en,no,no,low,safe_ecommerce
+MSG-0465,Pay ₹2499 verification charge to release your approved loan amount of ₹25000.,scam,advance_fee_fraud,email,en,no,yes,high,synthetic_training_example
+MSG-0466,Courier authority requires PAN update immediately at http://sbi-verify-login.fake.,scam,impersonation,email,en,yes,no,high,synthetic_training_example
+MSG-0467,Complete bank KYC within 2 hours or your debit card will be locked: http://customer-care-help.invalid,scam,kyc_phishing,sms,en,yes,no,high,synthetic_training_example
+MSG-0468,Your monthly subscription renewal for Spotify is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0469,Part-time task job available. Deposit ₹2499 to activate your employee ID.,scam,job_scam,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0470,School fee receipt for ₹2500 has been generated successfully.,safe,none,email,en,no,yes,low,safe_school
+MSG-0471,Government subsidy approved. Upload Aadhaar and pay ₹2499 verification fee.,scam,impersonation,email,en,no,yes,high,synthetic_training_example
+MSG-0472,Your card payment of ₹25000 at Swiggy was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0473,"Your loan is ready. Click http://sbi-verify-login.fake and upload Aadhaar, PAN, bank details immediately.",scam,loan_scam,sms,en,yes,no,high,synthetic_training_example
+MSG-0474,Your OTP for login is 290065. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0475,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0476,"Priya, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0477,Your power bill is overdue. Contact officer and pay ₹2499 to avoid disconnection.,scam,electricity_bill_scam,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0478,"Avick, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0479,Your friend is in hospital. Transfer ₹100000 immediately for treatment.,scam,social_engineering,email,en,no,yes,high,synthetic_training_example
+MSG-0480,Loan disbursal pending due to verification. Transfer ₹2499 now.,scam,loan_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0481,KYC expired for your account. Verify now at http://secure-account-check.test to avoid service suspension.,scam,kyc_phishing,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0482,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0483,KYC expired for your account. Verify now at http://login-security-check.test to avoid service suspension.,scam,kyc_phishing,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0484,School fee receipt for ₹999 has been generated successfully.,safe,none,email,en,no,yes,low,safe_school
+MSG-0485,Your cab booking is confirmed. Driver details will be shared before pickup.,safe,none,sms,en,no,no,low,safe_travel
+MSG-0486,Invest ₹25000 and receive fixed daily profit. No risk. Contact now.,scam,investment_scam,email,en,no,yes,medium,synthetic_training_example
+MSG-0487,The project sync has moved to 10 AM. Please join the usual meeting link.,safe,none,email,en,no,no,low,safe_meeting
+MSG-0488,Your cab booking is confirmed. Driver details will be shared before pickup.,safe,none,sms,en,no,no,low,safe_travel
+MSG-0489,Guaranteed 20% monthly return. Invest ₹99 today and double money in 30 days.,scam,investment_scam,email,en,no,yes,high,synthetic_training_example
+MSG-0490,KSEB payment failed. Share UPI PIN to restore connection.,scam,electricity_bill_scam,email,en,no,no,medium,synthetic_training_example
+MSG-0491,Your electricity bill of ₹500000 is due on Friday. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0492,Your salary of ₹10000 has been credited to your bank account ending 1470.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0493,Your package from HDFC is out for delivery today. Track it in the official app.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0494,HR team approved your profile. Transfer ₹1499 for document verification.,scam,job_scam,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0495,Your device is infected. Call support immediately and install remote access app.,scam,tech_support_scam,email,en,no,no,high,synthetic_training_example
+MSG-0496,Electricity connection will be disconnected tonight. Pay bill immediately at http://upi-block-alert.fake,scam,electricity_bill_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0497,Special trading opportunity. Your capital is guaranteed. Pay activation fee ₹499.,scam,investment_scam,email,en,no,yes,medium,synthetic_training_example
+MSG-0498,Transfer ₹299 processing fee first. Your grant payment will be credited after verification.,scam,advance_fee_fraud,sms,en,no,yes,high,synthetic_training_example
+MSG-0499,Security team needs your screen sharing code to remove malware.,scam,tech_support_scam,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0500,"I lost my phone. Send money to this UPI urgently, I will return tomorrow.",scam,social_engineering,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0501,The project sync has moved to 2 PM. Please join the usual meeting link.,safe,none,email,en,no,no,low,safe_meeting
+MSG-0502,Delivery failed due to incomplete address. Update details urgently: http://gov-refund-portal.test,scam,delivery_scam,sms,en,yes,no,high,synthetic_training_example
+MSG-0503,Your card payment of ₹2500 at Apollo Pharmacy was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0504,Your package from Flipkart is out for delivery today. Track it in the official app.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0505,Instant loan approved without CIBIL. Pay ₹999 file charge to receive ₹1499.,scam,loan_scam,email,en,no,yes,high,synthetic_training_example
+MSG-0506,Your salary of ₹1000000 has been credited to your bank account ending 4565.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0507,Your package from HDFC is out for delivery today. Track it in the official app.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0508,Your card payment of ₹25000 at Apollo Pharmacy was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0509,Your monthly subscription renewal for Google One is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0510,Your return pickup is scheduled for tomorrow between 10 AM and 4 PM.,safe,none,sms,en,no,no,low,safe_ecommerce
+MSG-0511,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0512,"I am stuck at airport. Send ₹10000 now, cannot call.",scam,social_engineering,sms,en,no,yes,high,synthetic_training_example
+MSG-0513,Congratulations! You won ₹2500 in Paytm lucky draw. Pay ₹199 processing fee to claim.,scam,fake_reward,email,en,no,yes,medium,synthetic_training_example
+MSG-0514,"I lost my phone. Send money to this UPI urgently, I will return tomorrow.",scam,social_engineering,email,en,no,no,high,synthetic_training_example
+MSG-0515,Your package from Amazon is out for delivery today. Track it in the official app.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0516,This is RBI support. Your account is under review. Verify details at http://bank-kyc-update.invalid,scam,impersonation,sms,en,yes,no,high,synthetic_training_example
+MSG-0517,Please keep this confidential and pay vendor today using this account.,scam,social_engineering,sms,en,no,no,medium,synthetic_training_example
+MSG-0518,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0519,Your monthly subscription renewal for Google One is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0520,Your monthly subscription renewal for Spotify is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0521,Your OTP for login is 680557. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0522,Your Axis order #525146 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0523,Your cab booking is confirmed. Driver details will be shared before pickup.,safe,none,sms,en,no,no,low,safe_travel
+MSG-0524,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0525,Your monthly subscription renewal for Netflix is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0526,Your salary of ₹25000 has been credited to your bank account ending 4737.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0527,Your electricity bill of ₹10000 is due on tomorrow. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0528,"Ravi, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0529,Your refund of ₹999 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0530,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0531,Work from home job. Earn ₹100000 daily. Pay ₹299 registration fee to start.,scam,job_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0532,Your salary of ₹1000000 has been credited to your bank account ending 8624.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0533,Your claim is approved. Pay service tax ₹199 to receive ₹10000.,scam,advance_fee_fraud,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0534,Limited stock tip. Send ₹499 to get insider recommendation before market opens.,scam,investment_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0535,I am your manager. Buy gift cards worth ₹500000 urgently and send codes.,scam,social_engineering,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0536,Crypto trading group gives assured profit. Join using http://parcel-clearance-pay.invalid and deposit now.,scam,investment_scam,email,en,yes,no,medium,synthetic_training_example
+MSG-0537,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0538,KYC expired for your account. Verify now at http://parcel-clearance-pay.invalid to avoid service suspension.,scam,kyc_phishing,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0539,Your bank account will be blocked today. Click http://reward-claim-now.fake immediately to update your KYC.,scam,kyc_phishing,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0540,You have been selected for a free iPhone. Claim reward here: http://gov-refund-portal.test,scam,fake_reward,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0541,Transfer ₹2499 processing fee first. Your grant payment will be credited after verification.,scam,advance_fee_fraud,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0542,Your power bill is overdue. Contact officer and pay ₹2499 to avoid disconnection.,scam,electricity_bill_scam,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0543,Your card payment of ₹999 at BigBasket was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0544,Special trading opportunity. Your capital is guaranteed. Pay activation fee ₹1499.,scam,investment_scam,email,en,no,yes,medium,synthetic_training_example
+MSG-0545,"Hi Priya, are we still meeting at 4 PM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0546,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0547,"Ravi, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0548,Your appointment with Dr. Rao is confirmed for 15 June at 11:30 AM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0549,School fee receipt for ₹50000 has been generated successfully.,safe,none,email,en,no,yes,low,safe_school
+MSG-0550,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0551,Your cab booking is confirmed. Driver details will be shared before pickup.,safe,none,sms,en,no,no,low,safe_travel
+MSG-0552,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0553,Transfer ₹799 processing fee first. Your grant payment will be credited after verification.,scam,advance_fee_fraud,email,en,no,yes,high,synthetic_training_example
+MSG-0554,Your bank account will be blocked today. Click http://gov-refund-portal.test immediately to update your KYC.,scam,kyc_phishing,sms,en,yes,no,high,synthetic_training_example
+MSG-0555,Loan disbursal pending due to verification. Transfer ₹2499 now.,scam,loan_scam,email,en,no,yes,high,synthetic_training_example
+MSG-0556,Delivery failed due to incomplete address. Update details urgently: http://upi-block-alert.fake,scam,delivery_scam,email,en,yes,no,medium,synthetic_training_example
+MSG-0557,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0558,Courier authority requires PAN update immediately at http://customer-care-help.invalid.,scam,impersonation,email,en,yes,no,high,synthetic_training_example
+MSG-0559,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0560,Complete bank KYC within 2 hours or your debit card will be locked: http://secure-account-check.test,scam,kyc_phishing,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0561,Your OTP for login is 675462. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0562,Your return pickup is scheduled for tomorrow between 11:30 AM and 4 PM.,safe,none,sms,en,no,no,low,safe_ecommerce
+MSG-0563,Your wallet KYC is pending. Submit PAN and Aadhaar here http://customer-care-help.invalid to continue transactions.,scam,kyc_phishing,email,en,yes,no,high,synthetic_training_example
+MSG-0564,Transfer ₹499 processing fee first. Your grant payment will be credited after verification.,scam,advance_fee_fraud,sms,en,no,yes,high,synthetic_training_example
+MSG-0565,Your Tata Neu order #693343 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0566,Final warning: electricity supply suspended in 2 hours. Update payment here http://customer-care-help.invalid,scam,electricity_bill_scam,sms,en,yes,no,high,synthetic_training_example
+MSG-0567,Your power bill is overdue. Contact officer and pay ₹799 to avoid disconnection.,scam,electricity_bill_scam,email,en,no,yes,high,synthetic_training_example
+MSG-0568,Your appointment with Dr. Sen is confirmed for 15 June at 6:30 PM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0569,Delivery failed due to incomplete address. Update details urgently: http://login-security-check.test,scam,delivery_scam,email,en,yes,no,medium,synthetic_training_example
+MSG-0570,"I am stuck at airport. Send ₹999 now, cannot call.",scam,social_engineering,sms,en,no,yes,high,synthetic_training_example
+MSG-0571,You have been selected for a free iPhone. Claim reward here: http://gov-refund-portal.test,scam,fake_reward,email,en,yes,no,medium,synthetic_training_example
+MSG-0572,Government subsidy approved. Upload Aadhaar and pay ₹2499 verification fee.,scam,impersonation,sms,en,no,yes,high,synthetic_training_example
+MSG-0573,Complete bank KYC within 6 hours or your debit card will be locked: http://upi-block-alert.fake,scam,kyc_phishing,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0574,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0575,Pay ₹999 verification charge to release your approved loan amount of ₹999.,scam,advance_fee_fraud,sms,en,no,yes,high,synthetic_training_example
+MSG-0576,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0577,Your monthly subscription renewal for Netflix is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0578,I am your manager. Buy gift cards worth ₹999 urgently and send codes.,scam,social_engineering,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0579,Your appointment with Dr. Mukherjee is confirmed for 28 May at 2 PM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0580,"Hi Rahul, are we still meeting at 2 PM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0581,Your appointment with Dr. Das is confirmed for 28 May at 4 PM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0582,"Your loan is ready. Click http://login-security-check.test and upload Aadhaar, PAN, bank details immediately.",scam,loan_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0583,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0584,Your email account will be disabled. Verify password at http://parcel-clearance-pay.invalid,scam,tech_support_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0585,Your return pickup is scheduled for tomorrow between 6:30 PM and 4 PM.,safe,none,sms,en,no,no,low,safe_ecommerce
+MSG-0586,Your salary of ₹1499 has been credited to your bank account ending 8191.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0587,Your monthly subscription renewal for Netflix is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0588,Your OTP for login is 696707. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0589,Work from home job. Earn ₹10000 daily. Pay ₹2499 registration fee to start.,scam,job_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0590,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0591,Your friend is in hospital. Transfer ₹500000 immediately for treatment.,scam,social_engineering,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0592,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0593,Your electricity bill of ₹999 is due on Monday. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0594,"Hi Amit, are we still meeting at 11:30 AM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0595,Get urgent cash in 10 minutes. Share bank account and OTP for approval.,scam,loan_scam,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0596,Your appointment with Dr. Rao is confirmed for 15 June at 6:30 PM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0597,Your mobile number won a lottery prize of ₹100000. Transfer ₹299 registration fee now.,scam,fake_reward,email,en,no,yes,high,synthetic_training_example
+MSG-0598,Low interest personal loan approved. Processing fee required before disbursal.,scam,loan_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0599,School fee receipt for ₹50000 has been generated successfully.,safe,none,email,en,no,yes,low,safe_school
+MSG-0600,Bank verification pending. Send OTP to this number to activate your card.,scam,otp_theft,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0601,Your bank account will be blocked today. Click http://parcel-clearance-pay.invalid immediately to update your KYC.,scam,kyc_phishing,email,en,yes,no,high,synthetic_training_example
+MSG-0602,This is RBI support. Your account is under review. Verify details at http://reward-claim-now.fake,scam,impersonation,email,en,yes,no,high,synthetic_training_example
+MSG-0603,This is RBI support. Your account is under review. Verify details at http://reward-claim-now.fake,scam,impersonation,sms,en,yes,no,high,synthetic_training_example
+MSG-0604,Guaranteed 20% monthly return. Invest ₹799 today and double money in 30 days.,scam,investment_scam,sms,en,no,yes,medium,synthetic_training_example
+MSG-0605,"Neha, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0606,Your electricity bill of ₹10000 is due on Friday. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0607,Government subsidy approved. Upload Aadhaar and pay ₹2499 verification fee.,scam,impersonation,sms,en,no,yes,high,synthetic_training_example
+MSG-0608,Your email account will be disabled. Verify password at http://sbi-verify-login.fake,scam,tech_support_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0609,Your friend is in hospital. Transfer ₹25000 immediately for treatment.,scam,social_engineering,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0610,Send your password and OTP for urgent security verification.,scam,otp_theft,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0611,Courier package waiting. Pay redelivery fee ₹499 to avoid return: http://customer-care-help.invalid,scam,delivery_scam,whatsapp,en,yes,yes,medium,synthetic_training_example
+MSG-0612,Special trading opportunity. Your capital is guaranteed. Pay activation fee ₹999.,scam,investment_scam,sms,en,no,yes,medium,synthetic_training_example
+MSG-0613,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0614,Your electricity bill of ₹1499 is due on Monday. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0615,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0616,KSEB payment failed. Share UPI PIN to restore connection.,scam,electricity_bill_scam,email,en,no,no,medium,synthetic_training_example
+MSG-0617,Your appointment with Dr. Das is confirmed for Monday at 2 PM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0618,"Dear customer, update KYC details urgently using http://bank-kyc-update.invalid. Failure may block UPI services.",scam,kyc_phishing,email,en,yes,no,high,synthetic_training_example
+MSG-0619,Your monthly subscription renewal for Microsoft 365 is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0620,Your OTP for login is 741674. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0621,Electricity department notice: pay reconnection charge ₹1499 now.,scam,electricity_bill_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0622,Virus detected in your phone. Download cleaner app from http://customer-care-help.invalid,scam,tech_support_scam,sms,en,yes,no,high,synthetic_training_example
+MSG-0623,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0624,Your electricity bill of ₹100000 is due on Monday. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0625,Your card payment of ₹999 at BigBasket was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0626,Share your OTP 856729 immediately to stop account suspension.,scam,otp_theft,sms,en,no,no,high,synthetic_training_example
+MSG-0627,KSEB payment failed. Share UPI PIN to restore connection.,scam,electricity_bill_scam,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0628,Your card payment of ₹1000000 at DMart was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0629,Your OTP for login is 913373. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0630,Your power bill is overdue. Contact officer and pay ₹1499 to avoid disconnection.,scam,electricity_bill_scam,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0631,Claim your cashback reward before midnight: http://reward-claim-now.fake,scam,fake_reward,email,en,yes,no,high,synthetic_training_example
+MSG-0632,Your Axis order #103883 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0633,Please keep this confidential and pay vendor today using this account.,scam,social_engineering,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0634,Limited stock tip. Send ₹299 to get insider recommendation before market opens.,scam,investment_scam,email,en,no,yes,medium,synthetic_training_example
+MSG-0635,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0636,"Congratulations, you are selected without interview. Pay onboarding kit fee ₹299.",scam,job_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0637,"Congratulations, you are selected without interview. Pay onboarding kit fee ₹199.",scam,job_scam,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0638,"Suman, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0639,Invest ₹999 and receive fixed daily profit. No risk. Contact now.,scam,investment_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0640,Security team needs your screen sharing code to remove malware.,scam,tech_support_scam,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0641,"I am stuck at airport. Send ₹100000 now, cannot call.",scam,social_engineering,email,en,no,yes,high,synthetic_training_example
+MSG-0642,KYC expired for your account. Verify now at http://reward-claim-now.fake to avoid service suspension.,scam,kyc_phishing,sms,en,yes,no,high,synthetic_training_example
+MSG-0643,Your card payment of ₹50000 at DMart was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0644,"Congratulations, you are selected without interview. Pay onboarding kit fee ₹999.",scam,job_scam,email,en,no,yes,medium,synthetic_training_example
+MSG-0645,Pay ₹1499 verification charge to release your approved loan amount of ₹25000.,scam,advance_fee_fraud,sms,en,no,yes,high,synthetic_training_example
+MSG-0646,Your refund is ready. Provide OTP and PIN to release ₹50000.,scam,otp_theft,sms,en,no,yes,high,synthetic_training_example
+MSG-0647,Your cab booking is confirmed. Driver details will be shared before pickup.,safe,none,sms,en,no,no,low,safe_travel
+MSG-0648,Your card payment of ₹100000 at Swiggy was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0649,Your cab booking is confirmed. Driver details will be shared before pickup.,safe,none,sms,en,no,no,low,safe_travel
+MSG-0650,Your friend is in hospital. Transfer ₹1000000 immediately for treatment.,scam,social_engineering,sms,en,no,yes,medium,synthetic_training_example
+MSG-0651,Your cab booking is confirmed. Driver details will be shared before pickup.,safe,none,sms,en,no,no,low,safe_travel
+MSG-0652,KSEB payment failed. Share UPI PIN to restore connection.,scam,electricity_bill_scam,whatsapp,en,no,no,medium,synthetic_training_example
+MSG-0653,You have been selected for a free iPhone. Claim reward here: http://gov-refund-portal.test,scam,fake_reward,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0654,Your mobile number won a lottery prize of ₹100000. Transfer ₹99 registration fee now.,scam,fake_reward,email,en,no,yes,medium,synthetic_training_example
+MSG-0655,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0656,Microsoft security alert: your computer is hacked. Click http://bank-kyc-update.invalid to fix now.,scam,tech_support_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0657,Pay ₹299 verification charge to release your approved loan amount of ₹999.,scam,advance_fee_fraud,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0658,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0659,Your card payment of ₹10000 at BigBasket was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0660,"Hi Rahul, are we still meeting at 2 PM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0661,Your cab booking is confirmed. Driver details will be shared before pickup.,safe,none,sms,en,no,no,low,safe_travel
+MSG-0662,Your friend is in hospital. Transfer ₹1499 immediately for treatment.,scam,social_engineering,email,en,no,yes,high,synthetic_training_example
+MSG-0663,Electricity department notice: pay reconnection charge ₹299 now.,scam,electricity_bill_scam,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0664,Your parcel is held at customs. Pay ₹799 clearance charge here: http://sbi-verify-login.fake,scam,delivery_scam,email,en,yes,yes,medium,synthetic_training_example
+MSG-0665,Microsoft security alert: your computer is hacked. Click http://sbi-verify-login.fake to fix now.,scam,tech_support_scam,sms,en,yes,no,high,synthetic_training_example
+MSG-0666,Police cyber cell notice: pay fine ₹99 today or legal action will start.,scam,impersonation,email,en,no,yes,high,synthetic_training_example
+MSG-0667,Your SBI order #886197 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0668,Your device is infected. Call support immediately and install remote access app.,scam,tech_support_scam,email,en,no,no,high,synthetic_training_example
+MSG-0669,Your email account will be disabled. Verify password at http://customer-care-help.invalid,scam,tech_support_scam,sms,en,yes,no,high,synthetic_training_example
+MSG-0670,Your card payment of ₹2500 at DMart was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0671,Electricity department notice: pay reconnection charge ₹499 now.,scam,electricity_bill_scam,sms,en,no,yes,medium,synthetic_training_example
+MSG-0672,"Avick, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0673,Courier authority requires PAN update immediately at http://upi-block-alert.fake.,scam,impersonation,email,en,yes,no,high,synthetic_training_example
+MSG-0674,Please keep this confidential and pay vendor today using this account.,scam,social_engineering,sms,en,no,no,medium,synthetic_training_example
+MSG-0675,Your Paytm order #207392 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0676,Your monthly subscription renewal for Spotify is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0677,Government subsidy approved. Upload Aadhaar and pay ₹299 verification fee.,scam,impersonation,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0678,Congratulations! You won ₹5000 in SBI lucky draw. Pay ₹499 processing fee to claim.,scam,fake_reward,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0679,Instant loan approved without CIBIL. Pay ₹999 file charge to receive ₹500000.,scam,loan_scam,email,en,no,yes,high,synthetic_training_example
+MSG-0680,Courier package waiting. Pay redelivery fee ₹199 to avoid return: http://secure-account-check.test,scam,delivery_scam,email,en,yes,yes,medium,synthetic_training_example
+MSG-0681,Your refund of ₹5000 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0682,Your return pickup is scheduled for tomorrow between 10 AM and 11:30 AM.,safe,none,sms,en,no,no,low,safe_ecommerce
+MSG-0683,Limited stock tip. Send ₹2499 to get insider recommendation before market opens.,scam,investment_scam,sms,en,no,yes,medium,synthetic_training_example
+MSG-0684,Low interest personal loan approved. Processing fee required before disbursal.,scam,loan_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0685,Your refund of ₹500000 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0686,Guaranteed 20% monthly return. Invest ₹999 today and double money in 30 days.,scam,investment_scam,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0687,Online typing job guaranteed income. Submit Aadhaar and pay registration fee here: http://login-security-check.test,scam,job_scam,sms,en,yes,no,medium,synthetic_training_example
+MSG-0688,Your appointment with Dr. Das is confirmed for Tuesday at 10 AM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0689,Courier package waiting. Pay redelivery fee ₹2499 to avoid return: http://gov-refund-portal.test,scam,delivery_scam,email,en,yes,yes,high,synthetic_training_example
+MSG-0690,Your salary of ₹25000 has been credited to your bank account ending 7319.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0691,Loan disbursal pending due to verification. Transfer ₹299 now.,scam,loan_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0692,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0693,Your bank account will be blocked today. Click http://gov-refund-portal.test immediately to update your KYC.,scam,kyc_phishing,sms,en,yes,no,high,synthetic_training_example
+MSG-0694,Crypto trading group gives assured profit. Join using http://customer-care-help.invalid and deposit now.,scam,investment_scam,email,en,yes,no,medium,synthetic_training_example
+MSG-0695,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0696,Your OTP for login is 705474. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0697,Your appointment with Dr. Mukherjee is confirmed for tomorrow at 6:30 PM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0698,"Neha, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0699,Your return pickup is scheduled for tomorrow between 2 PM and 4 PM.,safe,none,sms,en,no,no,low,safe_ecommerce
+MSG-0700,Loan disbursal pending due to verification. Transfer ₹99 now.,scam,loan_scam,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0701,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0702,Your refund of ₹1499 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0703,Your Myntra order #832377 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0704,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0705,Send your password and OTP for urgent security verification.,scam,otp_theft,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0706,KYC expired for your account. Verify now at http://secure-account-check.test to avoid service suspension.,scam,kyc_phishing,sms,en,yes,no,high,synthetic_training_example
+MSG-0707,Your salary of ₹25000 has been credited to your bank account ending 8170.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0708,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0709,Your salary of ₹100000 has been credited to your bank account ending 7203.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0710,Your bank account will be blocked today. Click http://bank-kyc-update.invalid immediately to update your KYC.,scam,kyc_phishing,sms,en,yes,no,high,synthetic_training_example
+MSG-0711,Your return pickup is scheduled for tomorrow between 2 PM and 10 AM.,safe,none,sms,en,no,no,low,safe_ecommerce
+MSG-0712,Your cab booking is confirmed. Driver details will be shared before pickup.,safe,none,sms,en,no,no,low,safe_travel
+MSG-0713,Your mobile number won a lottery prize of ₹500000. Transfer ₹1499 registration fee now.,scam,fake_reward,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0714,Your friend is in hospital. Transfer ₹2500 immediately for treatment.,scam,social_engineering,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0715,Government subsidy approved. Upload Aadhaar and pay ₹299 verification fee.,scam,impersonation,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0716,Security team needs your screen sharing code to remove malware.,scam,tech_support_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0717,Your refund of ₹2500 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0718,Send your password and OTP for urgent security verification.,scam,otp_theft,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0719,Your shipment is suspended. Confirm PAN and address here http://upi-block-alert.fake,scam,delivery_scam,email,en,yes,no,medium,synthetic_training_example
+MSG-0720,Your card payment of ₹999 at Reliance Digital was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0721,Your PhonePe order #540656 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0722,Your card payment of ₹2500 at DMart was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0723,Part-time task job available. Deposit ₹799 to activate your employee ID.,scam,job_scam,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0724,Registration fee pending. Pay ₹99 today to unlock your reward.,scam,advance_fee_fraud,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0725,Police cyber cell notice: pay fine ₹799 today or legal action will start.,scam,impersonation,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0726,"I am stuck at airport. Send ₹100000 now, cannot call.",scam,social_engineering,sms,en,no,yes,medium,synthetic_training_example
+MSG-0727,Final warning: electricity supply suspended in 2 hours. Update payment here http://login-security-check.test,scam,electricity_bill_scam,whatsapp,en,yes,no,medium,synthetic_training_example
+MSG-0728,Crypto trading group gives assured profit. Join using http://customer-care-help.invalid and deposit now.,scam,investment_scam,whatsapp,en,yes,no,medium,synthetic_training_example
+MSG-0729,Work from home job. Earn ₹1000000 daily. Pay ₹499 registration fee to start.,scam,job_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0730,Instant loan approved without CIBIL. Pay ₹199 file charge to receive ₹1000000.,scam,loan_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0731,Low interest personal loan approved. Processing fee required before disbursal.,scam,loan_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0732,Your wallet KYC is pending. Submit PAN and Aadhaar here http://sbi-verify-login.fake to continue transactions.,scam,kyc_phishing,email,en,yes,no,high,synthetic_training_example
+MSG-0733,Your cab booking is confirmed. Driver details will be shared before pickup.,safe,none,sms,en,no,no,low,safe_travel
+MSG-0734,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0735,Your friend is in hospital. Transfer ₹1499 immediately for treatment.,scam,social_engineering,sms,en,no,yes,high,synthetic_training_example
+MSG-0736,Your OTP for login is 397388. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0737,Your Paytm order #821175 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0738,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0739,Your claim is approved. Pay service tax ₹199 to receive ₹10000.,scam,advance_fee_fraud,email,en,no,yes,high,synthetic_training_example
+MSG-0740,Your parcel is held at customs. Pay ₹999 clearance charge here: http://bank-kyc-update.invalid,scam,delivery_scam,whatsapp,en,yes,yes,medium,synthetic_training_example
+MSG-0741,Special trading opportunity. Your capital is guaranteed. Pay activation fee ₹2499.,scam,investment_scam,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0742,Your Paytm order #109363 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0743,Your email account will be disabled. Verify password at http://sbi-verify-login.fake,scam,tech_support_scam,sms,en,yes,no,high,synthetic_training_example
+MSG-0744,School fee receipt for ₹25000 has been generated successfully.,safe,none,email,en,no,yes,low,safe_school
+MSG-0745,"Hi Suman, are we still meeting at 4 PM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0746,Your return pickup is scheduled for tomorrow between 6:30 PM and 11:30 AM.,safe,none,sms,en,no,no,low,safe_ecommerce
+MSG-0747,Your return pickup is scheduled for tomorrow between 2 PM and 11:30 AM.,safe,none,sms,en,no,no,low,safe_ecommerce
+MSG-0748,"Hi Priya, are we still meeting at 6:30 PM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0749,Your shipment is suspended. Confirm PAN and address here http://upi-block-alert.fake,scam,delivery_scam,email,en,yes,no,medium,synthetic_training_example
+MSG-0750,Your bank account will be blocked today. Click http://bank-kyc-update.invalid immediately to update your KYC.,scam,kyc_phishing,sms,en,yes,no,high,synthetic_training_example
+MSG-0751,Your device is infected. Call support immediately and install remote access app.,scam,tech_support_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0752,"Congratulations, you are selected without interview. Pay onboarding kit fee ₹199.",scam,job_scam,email,en,no,yes,medium,synthetic_training_example
+MSG-0753,Your salary of ₹1499 has been credited to your bank account ending 1982.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0754,Your claim is approved. Pay service tax ₹499 to receive ₹5000.,scam,advance_fee_fraud,email,en,no,yes,high,synthetic_training_example
+MSG-0755,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0756,Your salary of ₹100000 has been credited to your bank account ending 2022.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0757,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0758,Special trading opportunity. Your capital is guaranteed. Pay activation fee ₹999.,scam,investment_scam,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0759,Your card payment of ₹999 at DMart was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0760,Your Tata Neu order #835132 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0761,Security team needs your screen sharing code to remove malware.,scam,tech_support_scam,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0762,Your monthly subscription renewal for Spotify is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0763,Security team needs your screen sharing code to remove malware.,scam,tech_support_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0764,Online typing job guaranteed income. Submit Aadhaar and pay registration fee here: http://reward-claim-now.fake,scam,job_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0765,Your electricity bill of ₹10000 is due on Friday. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0766,Your card payment of ₹100000 at Swiggy was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0767,Your refund is ready. Provide OTP and PIN to release ₹25000.,scam,otp_theft,email,en,no,yes,high,synthetic_training_example
+MSG-0768,Online typing job guaranteed income. Submit Aadhaar and pay registration fee here: http://bank-kyc-update.invalid,scam,job_scam,sms,en,yes,no,high,synthetic_training_example
+MSG-0769,Bank verification pending. Send OTP to this number to activate your card.,scam,otp_theft,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0770,Security team needs your screen sharing code to remove malware.,scam,tech_support_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0771,Your email account will be disabled. Verify password at http://parcel-clearance-pay.invalid,scam,tech_support_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0772,Get urgent cash in 10 minutes. Share bank account and OTP for approval.,scam,loan_scam,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0773,Registration fee pending. Pay ₹999 today to unlock your reward.,scam,advance_fee_fraud,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0774,Congratulations! You won ₹5000 in SBI lucky draw. Pay ₹99 processing fee to claim.,scam,fake_reward,sms,en,no,yes,high,synthetic_training_example
+MSG-0775,Claim your cashback reward before midnight: http://login-security-check.test,scam,fake_reward,sms,en,yes,no,high,synthetic_training_example
+MSG-0776,Your bank account will be blocked today. Click http://gov-refund-portal.test immediately to update your KYC.,scam,kyc_phishing,email,en,yes,no,high,synthetic_training_example
+MSG-0777,Your OTP for login is 460549. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0778,This is RBI support. Your account is under review. Verify details at http://customer-care-help.invalid,scam,impersonation,email,en,yes,no,high,synthetic_training_example
+MSG-0779,Your parcel is held at customs. Pay ₹499 clearance charge here: http://login-security-check.test,scam,delivery_scam,whatsapp,en,yes,yes,medium,synthetic_training_example
+MSG-0780,Registration fee pending. Pay ₹1499 today to unlock your reward.,scam,advance_fee_fraud,sms,en,no,yes,high,synthetic_training_example
+MSG-0781,Low interest personal loan approved. Processing fee required before disbursal.,scam,loan_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0782,Your salary of ₹50000 has been credited to your bank account ending 2526.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0783,Crypto trading group gives assured profit. Join using http://customer-care-help.invalid and deposit now.,scam,investment_scam,sms,en,yes,no,medium,synthetic_training_example
+MSG-0784,Your appointment with Dr. Mukherjee is confirmed for Tuesday at 6:30 PM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0785,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0786,Your appointment with Dr. Sharma is confirmed for Friday at 10 AM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0787,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0788,Limited stock tip. Send ₹1499 to get insider recommendation before market opens.,scam,investment_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0789,"Congratulations, you are selected without interview. Pay onboarding kit fee ₹799.",scam,job_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0790,Your salary of ₹2500 has been credited to your bank account ending 8740.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0791,Your salary of ₹500000 has been credited to your bank account ending 5327.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0792,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0793,Your cab booking is confirmed. Driver details will be shared before pickup.,safe,none,sms,en,no,no,low,safe_travel
+MSG-0794,Courier authority requires PAN update immediately at http://sbi-verify-login.fake.,scam,impersonation,sms,en,yes,no,high,synthetic_training_example
+MSG-0795,"Your loan is ready. Click http://secure-account-check.test and upload Aadhaar, PAN, bank details immediately.",scam,loan_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0796,Instant loan approved without CIBIL. Pay ₹999 file charge to receive ₹500000.,scam,loan_scam,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0797,Microsoft security alert: your computer is hacked. Click http://bank-kyc-update.invalid to fix now.,scam,tech_support_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0798,Your monthly subscription renewal for Google One is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0799,Instant loan approved without CIBIL. Pay ₹499 file charge to receive ₹10000.,scam,loan_scam,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0800,Instant loan approved without CIBIL. Pay ₹1499 file charge to receive ₹2500.,scam,loan_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0801,Your return pickup is scheduled for tomorrow between 2 PM and 10 AM.,safe,none,sms,en,no,no,low,safe_ecommerce
+MSG-0802,Your refund is ready. Provide OTP and PIN to release ₹2500.,scam,otp_theft,email,en,no,yes,high,synthetic_training_example
+MSG-0803,Bank verification pending. Send OTP to this number to activate your card.,scam,otp_theft,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0804,"Hi Suman, are we still meeting at 6:30 PM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0805,Congratulations! You won ₹25000 in Tata Neu lucky draw. Pay ₹999 processing fee to claim.,scam,fake_reward,sms,en,no,yes,medium,synthetic_training_example
+MSG-0806,Your OTP for login is 940952. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0807,Package from overseas blocked by customs. Immediate payment required: http://gov-refund-portal.test,scam,delivery_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0808,Your salary of ₹50000 has been credited to your bank account ending 5609.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0809,Registration fee pending. Pay ₹299 today to unlock your reward.,scam,advance_fee_fraud,sms,en,no,yes,high,synthetic_training_example
+MSG-0810,Your cab booking is confirmed. Driver details will be shared before pickup.,safe,none,sms,en,no,no,low,safe_travel
+MSG-0811,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0812,Guaranteed 20% monthly return. Invest ₹499 today and double money in 30 days.,scam,investment_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0813,Final warning: electricity supply suspended in 2 hours. Update payment here http://parcel-clearance-pay.invalid,scam,electricity_bill_scam,whatsapp,en,yes,no,medium,synthetic_training_example
+MSG-0814,Your parcel is held at customs. Pay ₹1499 clearance charge here: http://bank-kyc-update.invalid,scam,delivery_scam,email,en,yes,yes,high,synthetic_training_example
+MSG-0815,Crypto trading group gives assured profit. Join using http://login-security-check.test and deposit now.,scam,investment_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0816,Low interest personal loan approved. Processing fee required before disbursal.,scam,loan_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0817,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0818,Your monthly subscription renewal for Prime is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0819,Your refund of ₹1499 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0820,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0821,Send your password and OTP for urgent security verification.,scam,otp_theft,sms,en,no,no,high,synthetic_training_example
+MSG-0822,This is RBI support. Your account is under review. Verify details at http://reward-claim-now.fake,scam,impersonation,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0823,I am your manager. Buy gift cards worth ₹1499 urgently and send codes.,scam,social_engineering,email,en,no,yes,high,synthetic_training_example
+MSG-0824,Your package from Tata Neu is out for delivery today. Track it in the official app.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0825,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0826,Guaranteed 20% monthly return. Invest ₹2499 today and double money in 30 days.,scam,investment_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0827,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0828,HR team approved your profile. Transfer ₹199 for document verification.,scam,job_scam,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0829,Your card payment of ₹1499 at BigBasket was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0830,Your parcel is held at customs. Pay ₹799 clearance charge here: http://upi-block-alert.fake,scam,delivery_scam,sms,en,yes,yes,high,synthetic_training_example
+MSG-0831,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0832,Your electricity bill of ₹50000 is due on 28 May. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0833,Low interest personal loan approved. Processing fee required before disbursal.,scam,loan_scam,email,en,no,no,high,synthetic_training_example
+MSG-0834,Your friend is in hospital. Transfer ₹100000 immediately for treatment.,scam,social_engineering,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0835,Your OTP for login is 112960. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0836,Bank verification pending. Send OTP to this number to activate your card.,scam,otp_theft,email,en,no,no,high,synthetic_training_example
+MSG-0837,Package from overseas blocked by customs. Immediate payment required: http://sbi-verify-login.fake,scam,delivery_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0838,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0839,School fee receipt for ₹100000 has been generated successfully.,safe,none,email,en,no,yes,low,safe_school
+MSG-0840,Get urgent cash in 10 minutes. Share bank account and OTP for approval.,scam,loan_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0841,KSEB payment failed. Share UPI PIN to restore connection.,scam,electricity_bill_scam,whatsapp,en,no,no,medium,synthetic_training_example
+MSG-0842,Your electricity bill of ₹100000 is due on tomorrow. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0843,The project sync has moved to 11:30 AM. Please join the usual meeting link.,safe,none,email,en,no,no,low,safe_meeting
+MSG-0844,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0845,School fee receipt for ₹10000 has been generated successfully.,safe,none,email,en,no,yes,low,safe_school
+MSG-0846,Delivery failed due to incomplete address. Update details urgently: http://sbi-verify-login.fake,scam,delivery_scam,whatsapp,en,yes,no,medium,synthetic_training_example
+MSG-0847,Your bank account will be blocked today. Click http://bank-kyc-update.invalid immediately to update your KYC.,scam,kyc_phishing,sms,en,yes,no,high,synthetic_training_example
+MSG-0848,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0849,"Suman, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0850,Your card payment of ₹5000 at Reliance Digital was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0851,Your salary of ₹999 has been credited to your bank account ending 5693.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0852,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0853,KYC expired for your account. Verify now at http://sbi-verify-login.fake to avoid service suspension.,scam,kyc_phishing,email,en,yes,no,high,synthetic_training_example
+MSG-0854,We are from customer care. Tell us your OTP to confirm account ownership.,scam,otp_theft,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0855,Microsoft security alert: your computer is hacked. Click http://sbi-verify-login.fake to fix now.,scam,tech_support_scam,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0856,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0857,KYC expired for your account. Verify now at http://upi-block-alert.fake to avoid service suspension.,scam,kyc_phishing,sms,en,yes,no,high,synthetic_training_example
+MSG-0858,Your card payment of ₹2500 at DMart was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0859,Courier package waiting. Pay redelivery fee ₹799 to avoid return: http://customer-care-help.invalid,scam,delivery_scam,email,en,yes,yes,medium,synthetic_training_example
+MSG-0860,Courier authority requires PAN update immediately at http://login-security-check.test.,scam,impersonation,email,en,yes,no,high,synthetic_training_example
+MSG-0861,Your shipment is suspended. Confirm PAN and address here http://customer-care-help.invalid,scam,delivery_scam,sms,en,yes,no,high,synthetic_training_example
+MSG-0862,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0863,Your email account will be disabled. Verify password at http://sbi-verify-login.fake,scam,tech_support_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0864,Part-time task job available. Deposit ₹99 to activate your employee ID.,scam,job_scam,sms,en,no,yes,medium,synthetic_training_example
+MSG-0865,Your package from ICICI is out for delivery today. Track it in the official app.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0866,"I lost my phone. Send money to this UPI urgently, I will return tomorrow.",scam,social_engineering,email,en,no,no,high,synthetic_training_example
+MSG-0867,Get urgent cash in 10 minutes. Share bank account and OTP for approval.,scam,loan_scam,email,en,no,no,high,synthetic_training_example
+MSG-0868,Your card payment of ₹2500 at Swiggy was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0869,Your salary of ₹1499 has been credited to your bank account ending 9510.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0870,KSEB payment failed. Share UPI PIN to restore connection.,scam,electricity_bill_scam,email,en,no,no,medium,synthetic_training_example
+MSG-0871,The project sync has moved to 4 PM. Please join the usual meeting link.,safe,none,email,en,no,no,low,safe_meeting
+MSG-0872,Complete bank KYC within 12 hours or your debit card will be locked: http://gov-refund-portal.test,scam,kyc_phishing,email,en,yes,no,high,synthetic_training_example
+MSG-0873,"Suman, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0874,Your package from Flipkart is out for delivery today. Track it in the official app.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0875,Your refund is ready. Provide OTP and PIN to release ₹1499.,scam,otp_theft,email,en,no,yes,high,synthetic_training_example
+MSG-0876,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0877,Your electricity bill of ₹1499 is due on Monday. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0878,Your OTP for login is 578621. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0879,Get urgent cash in 10 minutes. Share bank account and OTP for approval.,scam,loan_scam,email,en,no,no,high,synthetic_training_example
+MSG-0880,Your OTP for login is 555844. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0881,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0882,Your package from Paytm is out for delivery today. Track it in the official app.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0883,KYC expired for your account. Verify now at http://upi-block-alert.fake to avoid service suspension.,scam,kyc_phishing,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0884,"Avick, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0885,Your electricity bill of ₹25000 is due on Friday. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0886,Your cab booking is confirmed. Driver details will be shared before pickup.,safe,none,sms,en,no,no,low,safe_travel
+MSG-0887,Your electricity bill of ₹999 is due on Friday. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0888,Your appointment with Dr. Sharma is confirmed for Friday at 4 PM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0889,Your mobile number won a lottery prize of ₹1000000. Transfer ₹999 registration fee now.,scam,fake_reward,sms,en,no,yes,high,synthetic_training_example
+MSG-0890,Electricity connection will be disconnected tonight. Pay bill immediately at http://sbi-verify-login.fake,scam,electricity_bill_scam,sms,en,yes,no,high,synthetic_training_example
+MSG-0891,The project sync has moved to 10 AM. Please join the usual meeting link.,safe,none,email,en,no,no,low,safe_meeting
+MSG-0892,Your appointment with Dr. Das is confirmed for Monday at 6:30 PM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0893,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0894,School fee receipt for ₹10000 has been generated successfully.,safe,none,email,en,no,yes,low,safe_school
+MSG-0895,"Hi Ananya, are we still meeting at 4 PM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0896,"Ananya, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0897,Government subsidy approved. Upload Aadhaar and pay ₹99 verification fee.,scam,impersonation,email,en,no,yes,high,synthetic_training_example
+MSG-0898,Crypto trading group gives assured profit. Join using http://gov-refund-portal.test and deposit now.,scam,investment_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0899,Your card payment of ₹2500 at Reliance Digital was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0900,Invest ₹25000 and receive fixed daily profit. No risk. Contact now.,scam,investment_scam,sms,en,no,yes,medium,synthetic_training_example
+MSG-0901,Bank verification pending. Send OTP to this number to activate your card.,scam,otp_theft,sms,en,no,no,high,synthetic_training_example
+MSG-0902,Your device is infected. Call support immediately and install remote access app.,scam,tech_support_scam,email,en,no,no,high,synthetic_training_example
+MSG-0903,Your electricity bill of ₹1000000 is due on 15 June. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0904,Your refund of ₹2500 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0905,Your friend is in hospital. Transfer ₹10000 immediately for treatment.,scam,social_engineering,email,en,no,yes,medium,synthetic_training_example
+MSG-0906,Bank verification pending. Send OTP to this number to activate your card.,scam,otp_theft,sms,en,no,no,high,synthetic_training_example
+MSG-0907,Your OTP for login is 427557. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0908,Income Tax refund blocked. Submit bank details here http://secure-account-check.test to release money.,scam,impersonation,sms,en,yes,no,high,synthetic_training_example
+MSG-0909,Your monthly subscription renewal for Prime is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0910,Your monthly subscription renewal for Google One is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0911,Your shipment is suspended. Confirm PAN and address here http://reward-claim-now.fake,scam,delivery_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0912,"I lost my phone. Send money to this UPI urgently, I will return tomorrow.",scam,social_engineering,sms,en,no,no,high,synthetic_training_example
+MSG-0913,Guaranteed 20% monthly return. Invest ₹99 today and double money in 30 days.,scam,investment_scam,sms,en,no,yes,medium,synthetic_training_example
+MSG-0914,Your card payment of ₹50000 at Apollo Pharmacy was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0915,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0916,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0917,Your monthly subscription renewal for Google One is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0918,Your OTP for login is 812048. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0919,Share your OTP 571233 immediately to stop account suspension.,scam,otp_theft,email,en,no,no,high,synthetic_training_example
+MSG-0920,Pay ₹499 verification charge to release your approved loan amount of ₹500000.,scam,advance_fee_fraud,email,en,no,yes,high,synthetic_training_example
+MSG-0921,Transfer ₹799 processing fee first. Your grant payment will be credited after verification.,scam,advance_fee_fraud,sms,en,no,yes,high,synthetic_training_example
+MSG-0922,Claim your cashback reward before midnight: http://sbi-verify-login.fake,scam,fake_reward,email,en,yes,no,high,synthetic_training_example
+MSG-0923,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0924,Work from home job. Earn ₹500000 daily. Pay ₹499 registration fee to start.,scam,job_scam,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0925,Work from home job. Earn ₹100000 daily. Pay ₹499 registration fee to start.,scam,job_scam,sms,en,no,yes,medium,synthetic_training_example
+MSG-0926,Your refund is ready. Provide OTP and PIN to release ₹5000.,scam,otp_theft,email,en,no,yes,high,synthetic_training_example
+MSG-0927,Low interest personal loan approved. Processing fee required before disbursal.,scam,loan_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0928,Final notice: your prize will expire today. Click http://login-security-check.test to receive money.,scam,fake_reward,email,en,yes,no,high,synthetic_training_example
+MSG-0929,Your package from Tata Neu is out for delivery today. Track it in the official app.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0930,"Hi Ananya, are we still meeting at 6:30 PM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0931,Your card payment of ₹500000 at Reliance Digital was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0932,Your refund of ₹999 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0933,Your OTP for login is 587455. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0934,School fee receipt for ₹50000 has been generated successfully.,safe,none,email,en,no,yes,low,safe_school
+MSG-0935,Registration fee pending. Pay ₹2499 today to unlock your reward.,scam,advance_fee_fraud,email,en,no,yes,high,synthetic_training_example
+MSG-0936,Your electricity bill of ₹1499 is due on Monday. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0937,Get urgent cash in 10 minutes. Share bank account and OTP for approval.,scam,loan_scam,sms,en,no,no,high,synthetic_training_example
+MSG-0938,Registration fee pending. Pay ₹799 today to unlock your reward.,scam,advance_fee_fraud,sms,en,no,yes,high,synthetic_training_example
+MSG-0939,Claim your cashback reward before midnight: http://login-security-check.test,scam,fake_reward,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0940,Final warning: electricity supply suspended in 2 hours. Update payment here http://upi-block-alert.fake,scam,electricity_bill_scam,whatsapp,en,yes,no,medium,synthetic_training_example
+MSG-0941,Invest ₹500000 and receive fixed daily profit. No risk. Contact now.,scam,investment_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0942,Your salary of ₹2500 has been credited to your bank account ending 3719.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0943,"Hi Ravi, are we still meeting at 11:30 AM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0944,Your refund of ₹999 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0945,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0946,Your Myntra order #700350 has been delivered successfully.,safe,none,sms,en,no,no,low,safe_delivery
+MSG-0947,Your OTP for login is 531709. Do not share it with anyone.,safe,none,sms,en,no,no,low,safe_banking
+MSG-0948,Your card payment of ₹100000 at Swiggy was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0949,Your device is infected. Call support immediately and install remote access app.,scam,tech_support_scam,email,en,no,no,high,synthetic_training_example
+MSG-0950,"Hi Neha, are we still meeting at 11:30 AM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0951,Please keep this confidential and pay vendor today using this account.,scam,social_engineering,whatsapp,en,no,no,medium,synthetic_training_example
+MSG-0952,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0953,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0954,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0955,"Your loan is ready. Click http://upi-block-alert.fake and upload Aadhaar, PAN, bank details immediately.",scam,loan_scam,email,en,yes,no,high,synthetic_training_example
+MSG-0956,"New login detected on your account. If this was not you, change your password from the official app.",safe,none,email,en,no,no,low,safe_security_alert
+MSG-0957,Your salary of ₹100000 has been credited to your bank account ending 1659.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0958,Your flight check-in is now open. Use the airline website or app.,safe,none,email,en,no,no,low,safe_travel
+MSG-0959,You have been selected for a free iPhone. Claim reward here: http://customer-care-help.invalid,scam,fake_reward,sms,en,yes,no,medium,synthetic_training_example
+MSG-0960,Your account statement for this month is ready in the official banking app.,safe,none,email,en,no,no,low,safe_bank_alert
+MSG-0961,Limited stock tip. Send ₹1499 to get insider recommendation before market opens.,scam,investment_scam,sms,en,no,yes,high,synthetic_training_example
+MSG-0962,Your claim is approved. Pay service tax ₹999 to receive ₹1499.,scam,advance_fee_fraud,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0963,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0964,Final notice: your prize will expire today. Click http://reward-claim-now.fake to receive money.,scam,fake_reward,sms,en,yes,no,medium,synthetic_training_example
+MSG-0965,"Congratulations, you are selected without interview. Pay onboarding kit fee ₹999.",scam,job_scam,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0966,Electricity department notice: pay reconnection charge ₹99 now.,scam,electricity_bill_scam,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0967,Your card payment of ₹10000 at Zomato was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0968,Send small refundable fee ₹299 to confirm your beneficiary account.,scam,advance_fee_fraud,sms,en,no,yes,high,synthetic_training_example
+MSG-0969,The project sync has moved to 6:30 PM. Please join the usual meeting link.,safe,none,email,en,no,no,low,safe_meeting
+MSG-0970,"Hi Rahul, are we still meeting at 4 PM today?",safe,none,whatsapp,en,no,no,low,safe_meeting
+MSG-0971,Share your OTP 105337 immediately to stop account suspension.,scam,otp_theft,email,en,no,no,high,synthetic_training_example
+MSG-0972,Your refund is ready. Provide OTP and PIN to release ₹25000.,scam,otp_theft,email,en,no,yes,high,synthetic_training_example
+MSG-0973,"Dear customer, update KYC details urgently using http://customer-care-help.invalid. Failure may block UPI services.",scam,kyc_phishing,whatsapp,en,yes,no,high,synthetic_training_example
+MSG-0974,Registration fee pending. Pay ₹299 today to unlock your reward.,scam,advance_fee_fraud,sms,en,no,yes,high,synthetic_training_example
+MSG-0975,Police cyber cell notice: pay fine ₹299 today or legal action will start.,scam,impersonation,whatsapp,en,no,yes,high,synthetic_training_example
+MSG-0976,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0977,Guaranteed 20% monthly return. Invest ₹499 today and double money in 30 days.,scam,investment_scam,email,en,no,yes,medium,synthetic_training_example
+MSG-0978,Microsoft security alert: your computer is hacked. Click http://parcel-clearance-pay.invalid to fix now.,scam,tech_support_scam,sms,en,yes,no,high,synthetic_training_example
+MSG-0979,Your refund of ₹10000 has been processed to your original payment method.,safe,none,sms,en,no,yes,low,safe_ecommerce
+MSG-0980,Your appointment with Dr. Sharma is confirmed for Tuesday at 4 PM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0981,Your card payment of ₹2500 at Swiggy was successful.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0982,Claim your cashback reward before midnight: http://sbi-verify-login.fake,scam,fake_reward,sms,en,yes,no,high,synthetic_training_example
+MSG-0983,Your electricity bill of ₹500000 is due on 15 June. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-0984,Your appointment with Dr. Mukherjee is confirmed for Tuesday at 6:30 PM.,safe,none,sms,en,no,no,low,safe_health
+MSG-0985,Special trading opportunity. Your capital is guaranteed. Pay activation fee ₹2499.,scam,investment_scam,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0986,Send your password and OTP for urgent security verification.,scam,otp_theft,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0987,Payment received for your broadband bill. Thank you.,safe,none,sms,en,no,no,low,safe_utility
+MSG-0988,"I am stuck at airport. Send ₹1000000 now, cannot call.",scam,social_engineering,whatsapp,en,no,yes,medium,synthetic_training_example
+MSG-0989,"I lost my phone. Send money to this UPI urgently, I will return tomorrow.",scam,social_engineering,whatsapp,en,no,no,high,synthetic_training_example
+MSG-0990,"I lost my phone. Send money to this UPI urgently, I will return tomorrow.",scam,social_engineering,email,en,no,no,medium,synthetic_training_example
+MSG-0991,Your friend is in hospital. Transfer ₹25000 immediately for treatment.,scam,social_engineering,sms,en,no,yes,medium,synthetic_training_example
+MSG-0992,Your monthly subscription renewal for Spotify is successful.,safe,none,email,en,no,no,low,safe_subscription
+MSG-0993,Government subsidy approved. Upload Aadhaar and pay ₹1499 verification fee.,scam,impersonation,email,en,no,yes,high,synthetic_training_example
+MSG-0994,"Ravi, please review the document before today's standup.",safe,none,email,en,no,no,low,safe_office
+MSG-0995,Your salary of ₹2500 has been credited to your bank account ending 6179.,safe,none,sms,en,no,yes,low,safe_banking
+MSG-0996,Your cab booking is confirmed. Driver details will be shared before pickup.,safe,none,sms,en,no,no,low,safe_travel
+MSG-0997,Courier authority requires PAN update immediately at http://sbi-verify-login.fake.,scam,impersonation,email,en,yes,no,high,synthetic_training_example
+MSG-0998,Reminder: your leave request has been approved by your manager.,safe,none,email,en,no,no,low,safe_office
+MSG-0999,Your electricity bill of ₹100000 is due on Tuesday. Pay using the official app.,safe,none,sms,en,no,yes,low,safe_utility
+MSG-1000,Transfer ₹999 processing fee first. Your grant payment will be credited after verification.,scam,advance_fee_fraud,sms,en,no,yes,high,synthetic_training_example

@@ -40,5 +40,35 @@
     "message": "I am calling from bank support. Share the OTP you just received to stop your card from being blocked.",
     "expectedRiskLevel": "CRITICAL",
     "acceptableCategories": ["PHISHING", "SCAM"]
+  },
+  {
+    "id": "rule-based-kyc-phishing",
+    "message": "Your bank account will be blocked today. Click this link immediately to update your KYC: http://bank-verify-now.xyz",
+    "expectedRiskLevel": "HIGH",
+    "acceptableCategories": ["PHISHING", "SCAM"]
+  },
+  {
+    "id": "rule-based-otp-theft",
+    "message": "Dear customer, share your OTP immediately to avoid account suspension.",
+    "expectedRiskLevel": "HIGH",
+    "acceptableCategories": ["PHISHING", "SCAM"]
+  },
+  {
+    "id": "rule-based-fake-reward",
+    "message": "Congratulations! You won ₹10,00,000. Pay ₹999 processing fee to claim your reward.",
+    "expectedRiskLevel": "HIGH",
+    "acceptableCategories": ["SCAM"]
+  },
+  {
+    "id": "rule-based-medium-verification",
+    "message": "Please verify your account details within 24 hours to continue using the service.",
+    "expectedRiskLevel": "MEDIUM",
+    "acceptableCategories": ["PHISHING", "SCAM"]
+  },
+  {
+    "id": "rule-based-safe-delivery",
+    "message": "Your order has been delivered. Thank you for shopping with us.",
+    "expectedRiskLevel": "LOW",
+    "acceptableCategories": ["SAFE"]
   }
 ]

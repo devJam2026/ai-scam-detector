@@ -5,6 +5,9 @@ import {
   ScamAnalysis,
   ScamResultCard
 } from "./components/ScamResultCard";
+import ApproachComparison from "./components/ApproachComparison";
+import AnalysisLoader from "./components/AnalysisLoader";
+import EmptyResultState from "./components/EmptyResultState";
 import { ExampleMessages } from "./components/ExampleMessages";
 import { ScanHistory } from "./components/ScanHistory";
 
@@ -17,13 +20,17 @@ type ScanHistoryItem = {
 export default function HomePage() {
   const [message, setMessage] = useState("");
   const [result, setResult] = useState<ScamAnalysis | null>(null);
+  const [compareResult, setCompareResult] = useState<any | null>(null);
   const [history, setHistory] = useState<ScanHistoryItem[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loadingMode, setLoadingMode] = useState<"analyze" | "compare" | null>(null);
   const [error, setError] = useState("");
+  const [approach, setApproach] = useState("openai_llm");
 
   async function analyzeMessage() {
-    setLoading(true);
-    setResult(null);
+    if (!message.trim()) return;
+
+    setLoadingMode("analyze");
+    setCompareResult(null);
     setError("");
 
     try {
@@ -32,7 +39,7 @@ export default function HomePage() {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ message })
+        body: JSON.stringify({ message, approach })
       });
 
       const data = await response.json();
@@ -58,20 +65,59 @@ export default function HomePage() {
           : "Failed to analyze message"
       );
     } finally {
-      setLoading(false);
+      setLoadingMode(null);
+    }
+  }
+
+  async function compareAllApproaches() {
+    if (!message.trim()) return;
+
+    setLoadingMode("compare");
+    setResult(null);
+    setError("");
+
+    try {
+      const response = await fetch("/api/analyze-scam/compare", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Something went wrong");
+      }
+
+      setCompareResult(data);
+    } catch (error) {
+      console.error(error);
+      setError(
+        error instanceof Error
+          ? error.message
+          : "Failed to compare approaches"
+      );
+    } finally {
+      setLoadingMode(null);
     }
   }
 
   function selectHistoryItem(item: ScanHistoryItem) {
     setMessage(item.message);
     setResult(item.result);
+    setCompareResult(null);
     setError("");
   }
 
+  const isBusy = loadingMode !== null;
+
   return (
-    <main className="min-h-screen bg-slate-950 px-5 py-8 text-white">
-      <div className="mx-auto max-w-6xl">
-        <section className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+    <main className="min-h-screen px-6 py-8 text-white">
+      <AnalysisLoader isVisible={isBusy} mode={loadingMode ?? "analyze"} />
+      <div className="mx-auto max-w-7xl">
+        <section className="grid gap-6 lg:grid-cols-[420px_1fr]">
           <div className="space-y-6">
             <div className="rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 to-slate-950 p-8 shadow-2xl">
               <p className="text-sm font-medium uppercase tracking-widest text-blue-300">
@@ -118,6 +164,23 @@ export default function HomePage() {
                 onChange={(event) => setMessage(event.target.value)}
               />
 
+              <div className="mt-4 space-y-2">
+                <label className="text-sm font-medium text-slate-300">
+                  Detection Approach
+                </label>
+                <select
+                  value={approach}
+                  onChange={(event) => setApproach(event.target.value)}
+                  className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-white outline-none focus:border-blue-500"
+                >
+                  <option value="openai_llm">OpenAI LLM</option>
+                  <option value="rule_based">Rule-Based</option>
+                  <option value="ml_classifier">ML Classifier</option>
+                  <option value="local_llm">Local LLM</option>
+                  <option value="hybrid">Hybrid</option>
+                </select>
+              </div>
+
               {error && (
                 <div className="mt-4 rounded-xl border border-red-800 bg-red-950 p-4 text-sm text-red-100">
                   {error}
@@ -127,16 +190,25 @@ export default function HomePage() {
               <div className="mt-4 flex flex-col gap-3 sm:flex-row">
                 <button
                   onClick={analyzeMessage}
-                  disabled={loading || !message.trim()}
-                  className="rounded-xl bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-slate-700"
+                  disabled={isBusy || !message.trim()}
+                  className="rounded-xl bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {loading ? "Analyzing..." : "Analyze Message"}
+                  Analyze Message
+                </button>
+
+                <button
+                  onClick={compareAllApproaches}
+                  disabled={isBusy || !message.trim()}
+                  className="rounded-xl border border-slate-700 px-6 py-3 font-semibold text-white hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  Compare All
                 </button>
 
                 <button
                   onClick={() => {
                     setMessage("");
                     setResult(null);
+                    setCompareResult(null);
                     setError("");
                   }}
                   className="rounded-xl border border-slate-700 px-6 py-3 font-semibold hover:bg-slate-800"
@@ -150,16 +222,12 @@ export default function HomePage() {
           </div>
 
           <div className="space-y-6">
-            {result ? (
+            {compareResult ? (
+              <ApproachComparison compareResult={compareResult} />
+            ) : result ? (
               <ScamResultCard result={result} />
             ) : (
-              <div className="rounded-3xl border border-dashed border-slate-700 bg-slate-900/60 p-8 text-center">
-                <p className="text-xl font-semibold">No analysis yet</p>
-                <p className="mt-2 text-slate-400">
-                  Paste a message and click Analyze Message to see the scam risk
-                  report.
-                </p>
-              </div>
+              <EmptyResultState />
             )}
 
             <ScanHistory history={history} onSelect={selectHistoryItem} />
