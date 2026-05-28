@@ -1,0 +1,21 @@
+id,message,risk_level,category,date
+1,Congratulations! You've won a free iPhone! Click here to claim your prize now,HIGH,Prize Scam,2024-01-15
+2,Your account has been locked. Verify your identity immediately by clicking this link,HIGH,Phishing,2024-01-16
+3,Dear Customer, Update your payment method to continue your subscription,MEDIUM,Social Engineering,2024-01-17
+4,You are eligible for a tax refund of $500. Apply now at this link,HIGH,Tax Scam,2024-01-18
+5,URGENT: Suspicious activity detected. Confirm your password immediately,HIGH,Credential Theft,2024-01-19
+6,Claim your free Bitcoin bonus! Limited time offer,HIGH,Crypto Scam,2024-01-20
+7,You've been selected for an exclusive job opportunity with flexible hours,MEDIUM,Recruitment Scam,2024-01-21
+8,Your package delivery failed. Pay $2.99 to reschedule,HIGH,Delivery Scam,2024-01-22
+9,Hi, I noticed unusual activity on your account. Please reply with your PIN,HIGH,Social Engineering,2024-01-23
+10,Congratulations! You qualify for a mortgage with 0% interest rate,MEDIUM,Financial Scam,2024-01-24
+11,You are a lucky winner of our monthly lottery! Claim your $50,000 prize,HIGH,Lottery Scam,2024-01-25
+12,Please verify your Apple ID to maintain security,HIGH,Phishing,2024-01-26
+13,Your credit card has been blocked for security reasons. Update your information,HIGH,Phishing,2024-01-27
+14,Join our investment program and earn 200% returns monthly,HIGH,Ponzi Scheme,2024-01-28
+15,You have been selected for an Amazon gift card reward program,HIGH,Prize Scam,2024-01-29
+16,Verify your Social Security Number for tax purposes,HIGH,Identity Theft,2024-01-30
+17,You have unclaimed money in your bank account. Contact us to claim,MEDIUM,Financial Scam,2024-01-31
+18,Click here to download the latest security update for your device,MEDIUM,Malware Distribution,2024-02-01
+19,Confirm your banking details to prevent account suspension,HIGH,Phishing,2024-02-02
+20,You are eligible for debt relief. Call now for a free consultation,MEDIUM,Predatory Lending,2024-02-03
