@@ -2,6 +2,8 @@
 
 An educational multi-engine scam detection project built to compare different ways of detecting scam, phishing, spam, and social engineering messages.
 
+https://github.com/user-attachments/assets/ff6752e2-70d3-4b9d-a81e-43508d6ba579
+
 This project is not just an OpenAI wrapper.
 It compares multiple approaches for the same problem:
 
