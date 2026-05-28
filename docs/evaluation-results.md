@@ -1,401 +1,272 @@
-# Evaluation Results
+﻿# Evaluation Results
 
-## Executive Summary
+## Overview
 
-This document contains the evaluation results and performance metrics for different scam detection approaches.
+This document tracks the evaluation of different scam detection approaches.
 
-## Test Dataset Specifications
+The goal is to compare not only whether the system detects scam messages, but also how each approach performs across:
 
-### Dataset Characteristics
-
-- **Total Samples**: TBD
-- **Scam Instances**: TBD (%)
-- **Legitimate Instances**: TBD (%)
-- **Data Sources**: TBD
-- **Time Period**: TBD
-- **Languages**: TBD
-
-### Data Distribution
-
-```
-Training Set: 70% (TBD samples)
-Validation Set: 15% (TBD samples)
-Test Set: 15% (TBD samples)
-```
-
-## Evaluation Metrics
-
-### Primary Metrics
-
-1. **Accuracy**: Overall correctness
-2. **Precision**: True Positives / (True Positives + False Positives)
-3. **Recall**: True Positives / (True Positives + False Negatives)
-4. **F1-Score**: Harmonic mean of Precision and Recall
-5. **ROC-AUC**: Area under receiver operating characteristic curve
-
-### Secondary Metrics
-
-1. **Response Time**: Average inference latency (ms)
-2. **Throughput**: Requests per second
-3. **Resource Utilization**: CPU/GPU/Memory usage
-4. **Cost per Request**: Monetary cost of inference
-
-## Results by Approach
-
-### 1. OpenAI LLM Approach
-
-#### Performance Metrics
-
-| Metric    | Value | Status |
-| --------- | ----- | ------ |
-| Accuracy  | TBD   | -      |
-| Precision | TBD   | -      |
-| Recall    | TBD   | -      |
-| F1-Score  | TBD   | -      |
-| ROC-AUC   | TBD   | -      |
-
-#### Latency & Throughput
-
-| Metric                | Value       |
-| --------------------- | ----------- |
-| Average Response Time | TBD ms      |
-| P95 Response Time     | TBD ms      |
-| P99 Response Time     | TBD ms      |
-| Throughput            | TBD req/sec |
-
-#### Cost Analysis
-
-| Metric                   | Value |
-| ------------------------ | ----- |
-| Cost per Request         | $TBD  |
-| Average Tokens           | TBD   |
-| Daily Cost (1K requests) | $TBD  |
-
-#### Observations
-
-- TBD
+- Accuracy
+- Latency
+- Cost
+- Explainability
+- Infrastructure requirement
+- Reliability
 
 ---
 
-### 2. Traditional ML Approach
+## Current Approaches Evaluated
 
-#### Performance Metrics
-
-| Metric    | Value | Status |
-| --------- | ----- | ------ |
-| Accuracy  | TBD   | -      |
-| Precision | TBD   | -      |
-| Recall    | TBD   | -      |
-| F1-Score  | TBD   | -      |
-| ROC-AUC   | TBD   | -      |
-
-#### Latency & Throughput
-
-| Metric                | Value       |
-| --------------------- | ----------- |
-| Average Response Time | TBD ms      |
-| P95 Response Time     | TBD ms      |
-| P99 Response Time     | TBD ms      |
-| Throughput            | TBD req/sec |
-
-#### Resource Utilization
-
-| Resource     | Value  |
-| ------------ | ------ |
-| CPU Usage    | TBD %  |
-| Memory Usage | TBD MB |
-| Model Size   | TBD MB |
-
-#### Model Comparison
-
-| Model               | Accuracy | Precision | Recall | F1-Score |
-| ------------------- | -------- | --------- | ------ | -------- |
-| Random Forest       | TBD      | TBD       | TBD    | TBD      |
-| SVM                 | TBD      | TBD       | TBD    | TBD      |
-| Naive Bayes         | TBD      | TBD       | TBD    | TBD      |
-| Logistic Regression | TBD      | TBD       | TBD    | TBD      |
-
-#### Observations
-
-- TBD
+| Approach | Status |
+|---|---|
+| Rule-Based | Implemented |
+| Traditional ML | Implemented |
+| OpenAI LLM | Implemented |
+| Local LLM | Implemented |
+| Hybrid | Implemented |
 
 ---
 
-### 3. Local LLM Approach
+## Evaluation Dataset
 
-#### Model Variants
+The ML classifier is trained using a labelled dataset:
 
-**Llama 2 (7B)**
-| Metric | Value |
-|--------|-------|
-| Accuracy | TBD |
-| Precision | TBD |
-| Recall | TBD |
-| Response Time | TBD ms |
-| Memory Usage | TBD GB |
+```txt
+src/datasets/sample-scam-messages.csv
+```
 
-**Mistral (7B)**
-| Metric | Value |
-|--------|-------|
-| Accuracy | TBD |
-| Precision | TBD |
-| Recall | TBD |
-| Response Time | TBD ms |
-| Memory Usage | TBD GB |
+Dataset columns:
 
-**Phi (2.7B)**
-| Metric | Value |
-|--------|-------|
-| Accuracy | TBD |
-| Precision | TBD |
-| Recall | TBD |
-| Response Time | TBD ms |
-| Memory Usage | TBD GB |
-
-#### GPU Utilization
-
-| Metric            | Value  |
-| ----------------- | ------ |
-| GPU Memory (Peak) | TBD GB |
-| GPU Utilization   | TBD %  |
-| Batch Size        | TBD    |
-| Batches/sec       | TBD    |
-
-#### Observations
-
-- TBD
+| Column          | Description                           |
+| --------------- | ------------------------------------- |
+| message         | Input message                         |
+| label           | scam or safe                          |
+| scam_type       | Scam category or none                 |
+| source_channel  | SMS, email, WhatsApp, etc.            |
+| contains_url    | Whether message contains URL          |
+| contains_amount | Whether message contains money amount |
+| expected_risk   | Expected risk level                   |
+| notes           | Extra note for analysis               |
 
 ---
 
-### 4. Hybrid Approach
+## ML Training Result
 
-#### Overall Performance
+Example training output:
 
-| Metric    | Value |
-| --------- | ----- |
-| Accuracy  | TBD   |
-| Precision | TBD   |
-| Recall    | TBD   |
-| F1-Score  | TBD   |
-| ROC-AUC   | TBD   |
-
-#### Routing Distribution
-
-```
-Stage 1 (ML Filter):     80% of requests
-├─ High Confidence:      70% → Direct output
-└─ Medium Confidence:    10% → Route to Stage 2
-
-Stage 2 (Local LLM):     15% of requests
-├─ Confidence High:      12% → Output
-└─ Disagreement:         3% → Route to Stage 3
-
-Stage 3 (OpenAI API):    5% of requests
-└─ Final Decision:       5% → Output
+```txt
+ML scam classifier trained successfully.
+Model saved to: src/models/scam-classifier.pkl
+Metrics saved to: src/models/scam-classifier-metrics.json
+Accuracy: 0.67
 ```
 
-#### Performance by Stage
+The first accuracy score may be low if the dataset is small.
 
-| Stage      | Avg Latency | Accuracy | Cost |
-| ---------- | ----------- | -------- | ---- |
-| ML Filter  | TBD ms      | TBD%     | $0   |
-| Local LLM  | TBD ms      | TBD%     | $0   |
-| OpenAI API | TBD ms      | TBD%     | $TBD |
+This is expected because traditional ML depends heavily on:
 
-#### Aggregate Metrics
-
-| Metric                   | Value  |
-| ------------------------ | ------ |
-| Weighted Average Latency | TBD ms |
-| Cost per Request         | $TBD   |
-| Effective Accuracy       | TBD%   |
-
-#### Observations
-
-- TBD
+* Dataset size
+* Label quality
+* Scam type coverage
+* Safe message variety
+* Hard-safe examples
+* Hard-scam examples
 
 ---
 
-## Comparative Analysis
+## Important Metrics
 
-### Accuracy Comparison
+For scam detection, accuracy alone is not enough.
 
-```
-Accuracy Ranking (Highest → Lowest):
-1. OpenAI LLM:      TBD%
-2. Hybrid Approach: TBD%
-3. Local LLM:       TBD%
-4. Traditional ML:  TBD%
-```
+| Metric         | Meaning                                      |
+| -------------- | -------------------------------------------- |
+| Accuracy       | Overall correct predictions                  |
+| Precision      | How many predicted scams were actually scams |
+| Recall         | How many actual scams were detected          |
+| F1 Score       | Balance between precision and recall         |
+| False Positive | Safe message incorrectly marked as scam      |
+| False Negative | Scam message incorrectly marked as safe      |
 
-### Latency Comparison
+---
 
-```
-Speed Ranking (Fastest → Slowest):
-1. Traditional ML:  TBD ms
-2. Hybrid Approach: TBD ms
-3. Local LLM:       TBD ms
-4. OpenAI LLM:      TBD ms
-```
+## Why Recall Matters
 
-### Cost Efficiency
+In scam detection, false negatives are dangerous.
 
-```
-Cost per Accuracy Point:
-1. Traditional ML:  $TBD per 1% accuracy
-2. Hybrid Approach: $TBD per 1% accuracy
-3. Local LLM:       $TBD per 1% accuracy
-4. OpenAI LLM:      $TBD per 1% accuracy
+A false negative means:
+
+```txt
+A real scam was marked safe.
 ```
 
-## Confusion Matrix Analysis
+So scam recall is very important.
 
-### Per Approach
+However, false positives also matter.
 
-- True Positives: TBD
-- True Negatives: TBD
-- False Positives: TBD
-- False Negatives: TBD
+A false positive means:
 
-### Error Analysis
+```txt
+A safe message was marked scam.
+```
 
-- Most common misclassifications: TBD
-- Edge cases identified: TBD
-- False positive patterns: TBD
-- False negative patterns: TBD
+This can reduce user trust.
 
-## Class Imbalance Impact
+A good system should balance both.
 
-### Data Distribution
+---
 
-- Scam samples: TBD%
-- Legitimate samples: TBD%
+## Manual Test Cases
 
-### Handling Methods
+| Message Type        | Example                                       | Expected Risk |
+| ------------------- | --------------------------------------------- | ------------- |
+| KYC phishing        | Your account will be blocked. Update KYC now. | High          |
+| OTP theft           | Share your OTP to avoid suspension.           | High          |
+| Fake reward         | You won ₹10 lakh. Pay fee to claim.           | High          |
+| Delivery scam       | Your parcel is held. Pay customs fee.         | Medium/High   |
+| Safe order update   | Your order has been delivered.                | Low           |
+| Safe meeting update | Are we still meeting at 4 PM?                 | Low           |
+| Safe OTP alert      | Your OTP is 123456. Do not share it.          | Low/Medium    |
 
-- Techniques used: TBD
-- Impact on minority class: TBD
-- Impact on overall accuracy: TBD
+---
 
-## Cross-Validation Results
+## Approach Comparison Template
 
-### K-Fold Results (k=5)
+| Approach       | Risk        |   Score |  Confidence |     Latency |       Cost | Infra    | Explainability |
+| -------------- | ----------- | ------: | ----------: | ----------: | ---------: | -------- | -------------- |
+| Rule-Based     | High        |      95 |         95% |        1 ms |         ₹0 | Very Low | High           |
+| Traditional ML | Medium/High | Depends |     Depends |        Fast |         ₹0 | Low      | Medium         |
+| OpenAI LLM     | High        |     90+ |        High |      Medium |   API Cost | Very Low | Very High      |
+| Local LLM      | High        | Depends | Medium/High | Medium/Slow |     ₹0 API | Medium   | High           |
+| Hybrid         | High        |     90+ |        High |      Medium | Controlled | Medium   | Very High      |
 
-| Fold      | Fold 1 | Fold 2 | Fold 3 | Fold 4 | Fold 5 | Mean | Std Dev |
-| --------- | ------ | ------ | ------ | ------ | ------ | ---- | ------- |
-| Accuracy  | TBD    | TBD    | TBD    | TBD    | TBD    | TBD  | TBD     |
-| Precision | TBD    | TBD    | TBD    | TBD    | TBD    | TBD  | TBD     |
-| Recall    | TBD    | TBD    | TBD    | TBD    | TBD    | TBD  | TBD     |
+---
 
-## Time Series Analysis (if applicable)
+## Current Observations
 
-### Performance Over Time
+### Rule-Based
 
-- TBD
+Strengths:
 
-### Seasonal Patterns
+* Fastest
+* Zero cost
+* Highly explainable
+* Good for obvious scam patterns
 
-- TBD
+Weaknesses:
 
-### Drift Detection
+* Can miss new or subtle scam wording
+* Requires manual rule updates
 
-- TBD
+---
 
-## Feature Importance (Traditional ML)
+### Traditional ML
 
-### Top 10 Features
+Strengths:
 
-1. TBD (Importance: TBD%)
-2. TBD (Importance: TBD%)
-3. TBD (Importance: TBD%)
-   ... (7 more)
+* Low cost
+* Fast
+* Measurable
+* Works without external API
 
-## Deployment Readiness
+Weaknesses:
 
-| Criterion              | Status | Notes           |
-| ---------------------- | ------ | --------------- |
-| Accuracy Threshold Met | TBD    | Target: TBD%    |
-| Latency Acceptable     | TBD    | Target: TBD ms  |
-| Cost Within Budget     | TBD    | Budget: $TBD/mo |
-| Privacy Compliant      | TBD    | -               |
-| Scalable               | TBD    | -               |
-| Production Ready       | TBD    | -               |
+* Needs quality labelled dataset
+* Limited explanation
+* Needs retraining for new scam patterns
 
-## Recommendations
+---
 
-### Best Overall: TBD Approach
+### OpenAI LLM
 
-**Rationale**: TBD
+Strengths:
 
-### Best for High Accuracy: TBD Approach
+* Best natural language understanding
+* Strong explanation
+* Handles ambiguous messages well
 
-**Rationale**: TBD
+Weaknesses:
 
-### Best for Low Cost: TBD Approach
+* API cost
+* External dependency
+* Needs structured output validation
 
-**Rationale**: TBD
+---
 
-### Best for Privacy: TBD Approach
+### Local LLM
 
-**Rationale**: TBD
+Strengths:
 
-### Best for Latency: TBD Approach
+* No hosted API cost
+* Better privacy
+* Good for local experimentation
 
-**Rationale**: TBD
+Weaknesses:
 
-## Future Testing
+* Requires local CPU/RAM
+* Slower than rule-based and ML
+* JSON output may need fallback handling
 
-### Planned Evaluations
+---
 
-- [ ] A/B testing in production
-- [ ] Edge case analysis
-- [ ] Performance degradation tests
-- [ ] Model robustness testing
-- [ ] Adversarial attack simulations
-- [ ] Long-term drift analysis
+### Hybrid
 
-### Additional Datasets
+Strengths:
 
-- [ ] Test on external datasets
-- [ ] Real-world production data
-- [ ] Multilingual samples
-- [ ] Regional variations
+* Best overall balance
+* Combines deterministic signals with AI reasoning
+* Better trust and explanation
+* Good production-style design
 
-## Appendices
+Weaknesses:
 
-### A. Test Dataset Details
+* More complex
+* Requires scoring strategy
+* Needs more testing
 
-- Source: TBD
-- Collection Method: TBD
-- Date Range: TBD
-- Annotation Process: TBD
+---
 
-### B. Hardware Specifications
+## Next Improvements
 
-- CPU: TBD
-- GPU: TBD
-- RAM: TBD
-- Storage: TBD
+### Dataset Improvements
 
-### C. Software Versions
+* Add 1000+ labelled examples
+* Add different scam categories
+* Add hard-safe examples
+* Add multilingual examples later
+* Add real-world style message variations
 
-- Python: TBD
-- PyTorch/TensorFlow: TBD
-- scikit-learn: TBD
-- Transformers: TBD
+### ML Improvements
 
-### D. Detailed Metrics Tables
+* Improve TF-IDF n-gram settings
+* Try Linear SVM
+* Add cross-validation
+* Track precision, recall, and F1
+* Improve scam-type classification
 
-- Full confusion matrices
-- Per-class metrics
-- Threshold analysis
+### System Improvements
 
-## Conclusion
+* Add compare-all output persistence
+* Add evaluation dashboard
+* Add false positive / false negative test cases
+* Add cost and latency logs
+* Add confidence calibration
 
-TBD
+---
 
-## Sign-off
+## Final Evaluation Conclusion
 
-- Evaluation Date: TBD
-- Evaluator: TBD
-- Review Status: Pending
+Each approach solves the same scam detection problem differently.
+
+The main learning is not only model usage.
+
+The main learning is understanding trade-offs:
+
+```txt
+Rules = speed and explainability
+ML = low-cost measurable classification
+OpenAI LLM = reasoning and explanation
+Local LLM = privacy and local control
+Hybrid = practical production-style balance
+```
+
+The hybrid approach is currently the best overall architecture for this project because it combines reliability, explanation quality, and cost-aware decision-making.

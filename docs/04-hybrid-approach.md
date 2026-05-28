@@ -1,143 +1,177 @@
-# Hybrid Approach
+﻿# 04 — Hybrid Approach
 
 ## Overview
 
-This document describes a hybrid approach to scam detection that combines multiple techniques for optimal performance.
+The hybrid approach combines multiple detection methods to make the final decision.
+
+Instead of depending on only one model or one rule system, it combines:
+
+- Rule-based fraud signals
+- LLM reasoning
+- Structured validation
+- Final scoring logic
+
+This is the closest approach to a production-style AI system.
+
+---
+
+## What This Approach Does
+
+The hybrid engine analyzes a message using more than one strategy.
+
+Current implementation:
+
+```txt
+Rule-Based Engine + OpenAI LLM + Scoring Logic
+```
+
+Future extension:
+
+```txt
+Rule-Based Engine + ML Classifier + OpenAI / Local LLM + Scoring Logic
+```
+
+---
 
 ## Architecture
 
-- **Primary Layer**: Traditional ML for fast filtering
-- **Secondary Layer**: Local LLM for detailed analysis
-- **Fallback Layer**: OpenAI API for edge cases
-- **Confidence Threshold**: Dynamic routing based on scores
+```mermaid
+flowchart TD
+    A[User enters suspicious message] --> B[Next.js API Route]
+    B --> C[Rule-Based Engine]
+    B --> D[OpenAI LLM Analyzer]
 
-## Key Features
+    C --> E[Rule Risk Score]
+    D --> F[LLM Risk Score]
 
-- Balanced cost and performance
-- Redundancy and failover capabilities
-- Context-aware classification
-- Adaptive confidence thresholds
+    E --> G[Hybrid Scoring Engine]
+    F --> G
 
-## Implementation Details
+    G --> H[Final Risk Level]
+    G --> I[Final Confidence]
+    G --> J[Combined Red Flags]
+    G --> K[Safe Action]
 
-### Detection Pipeline
-
-1. **Stage 1: Fast Filter** (Traditional ML)
-   - Quick classification with Random Forest
-   - Identify obvious scams/non-scams
-   - Route uncertain cases to Stage 2
-
-2. **Stage 2: Detailed Analysis** (Local LLM)
-   - In-depth contextual understanding
-   - Complex pattern recognition
-   - Explainability
-
-3. **Stage 3: Premium Analysis** (OpenAI API)
-   - Handle edge cases
-   - Low-confidence samples
-   - Continuous learning feedback
-
-### Decision Flow
-
-```
-Input
-  ↓
-[ML Filter]
-  ├─→ High confidence (>0.9) → Output
-  ├─→ Medium confidence (0.5-0.9) → [Local LLM]
-  └─→ Low confidence (<0.5) → [OpenAI API]
-
-[Local LLM]
-  ├─→ Agrees with ML → Output
-  └─→ Disagrees → [OpenAI API] for arbitration
-
-[OpenAI API]
-  └─→ Final decision
+    H --> L[UI Result Card]
+    I --> L
+    J --> L
+    K --> L
 ```
 
-## Advantages
+---
 
-- Cost-effective (ML handles 80% of cases)
-- Low latency for most requests
-- Privacy-preserving for common cases
-- High accuracy through multi-model consensus
-- Graceful degradation with fallbacks
-- Better explainability than single models
+## Hybrid Scoring Flow
 
-## Disadvantages
-
-- Increased complexity
-- Multiple models to maintain
-- Orchestration overhead
-- Potential routing artifacts
-
-## Performance Metrics
-
-- Average Accuracy: TBD
-- Average Response Time: TBD
-- Cost per Request: TBD
-- API call reduction: TBD
-
-## Routing Strategy
-
-### Confidence Thresholds
-
-- **Very High (>0.95)**: Direct output
-- **High (0.85-0.95)**: Optional LLM validation
-- **Medium (0.5-0.85)**: LLM analysis mandatory
-- **Low (<0.5)**: OpenAI API consultation
-
-### Cost Optimization
-
-- ~80% handled by ML (near-zero cost)
-- ~15% handled by Local LLM (compute cost only)
-- ~5% handled by OpenAI API (highest cost)
-
-## Implementation
-
-### Components
-
-1. ML Pipeline Module
-2. Local LLM Interface
-3. OpenAI API Client
-4. Routing Logic
-5. Result Aggregator
-
-### Configuration
-
-```yaml
-hybrid:
-  stage1:
-    enabled: true
-    model: random_forest
-    threshold_high: 0.9
-    threshold_low: 0.5
-
-  stage2:
-    enabled: true
-    model: mistral
-    timeout: 5000
-
-  stage3:
-    enabled: true
-    model: gpt-4
-    max_calls_per_hour: 100
+```mermaid
+flowchart LR
+    A[Rule Score] --> C[Weighted Score]
+    B[LLM Score] --> C
+    D[Agreement Boost] --> C
+    C --> E[Final Risk Score]
+    E --> F[Low / Medium / High]
 ```
 
-## Monitoring & Optimization
+---
 
-- Track routing decisions
-- Monitor accuracy by stage
-- Cost tracking per request type
-- Model performance comparison
+## Why Hybrid?
 
-## Usage Example
+A single approach has limitations.
 
-```python
-# Example implementation
+| Approach      | Limitation                           |
+| ------------- | ------------------------------------ |
+| Rule-based    | Misses new wording                   |
+| ML classifier | Needs good labelled data             |
+| OpenAI LLM    | Has API cost and external dependency |
+| Local LLM     | Needs local infra and may be slower  |
+
+Hybrid combines strengths:
+
+| Component  | Strength                              |
+| ---------- | ------------------------------------- |
+| Rules      | Fast, cheap, deterministic            |
+| LLM        | Strong reasoning and explanation      |
+| Validation | Consistent output                     |
+| Scoring    | Final control remains with the system |
+
+---
+
+## Benefits
+
+| Benefit                 | Explanation                               |
+| ----------------------- | ----------------------------------------- |
+| Better reliability      | Does not depend only on one model         |
+| Strong explainability   | Combines rule signals and LLM explanation |
+| Cost control            | Rules can handle obvious cases            |
+| Flexible architecture   | ML/local LLM can be added later           |
+| Production-style design | Similar to real-world AI system design    |
+
+---
+
+## Drawbacks
+
+| Drawback                          | Explanation                                 |
+| --------------------------------- | ------------------------------------------- |
+| More complex than single approach | Multiple engines need orchestration         |
+| Needs normalization               | All engines must return common output shape |
+| Slightly higher latency           | Multiple checks may run together            |
+| Requires scoring strategy         | Weighting needs tuning                      |
+| More testing required             | Must test disagreement between engines      |
+
+---
+
+## What We Learn
+
+This approach teaches senior applied AI engineering concepts:
+
+* Hybrid AI system design
+* Rule + LLM orchestration
+* Risk scoring
+* Confidence scoring
+* Output normalization
+* Explainability design
+* Cost-aware routing
+* Trust and safety thinking
+* Comparing model-based and deterministic systems
+* Designing around the model, not just calling the model
+
+---
+
+## Example Decision Logic
+
+```txt
+If rules detect OTP sharing + suspicious link:
+    increase risk strongly
+
+If LLM also detects phishing intent:
+    boost confidence
+
+If rule engine says medium but LLM says high:
+    final result may become high
+
+If both engines agree:
+    confidence increases
 ```
 
-## References
+---
 
-- All relevant documentation from other approaches
-- Multi-model ensemble techniques
+## When This Approach Is Best
+
+This approach is best when:
+
+* We want better reliability
+* Explainability matters
+* Cost needs to be controlled
+* We want a production-style architecture
+* Different approaches should be compared
+* Final decision should remain under system control
+
+---
+
+## When This Approach Is Not Best
+
+This approach is not ideal when:
+
+* We need the simplest prototype
+* We want the lowest latency
+* We do not want multiple dependencies
+* We do not have time to test scoring logic
